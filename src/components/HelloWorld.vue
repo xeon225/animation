@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div><a href="/animation/ps4.html">ps4</a></div>
+     <div><a href="/animation/drawingList.html">drawingList</a></div>
   </div>
 </template>
 

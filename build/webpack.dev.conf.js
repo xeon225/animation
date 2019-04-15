@@ -65,7 +65,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks:['ps4']
     }),
-
+    // drawingList
+    new HtmlWebpackPlugin({
+      filename: 'animation/drawingList.html',
+      template: 'tpl/animation/drawingList.html',
+      inject: true,
+      chunks:['drawingList']
+    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
