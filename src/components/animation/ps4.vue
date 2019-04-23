@@ -1,18 +1,31 @@
 <template>
   <div id="ps4">
-  	<div class="pos-r">
+	<!-- ps4 1 -->
+  	<div class="pos-r" v-if="show">
   		 <div class="pos-r text-darker" :style="'width:'+Width+'px;height:'+Height+'px;'">
-	  		<div v-for="items in dataNew">
+	  		<div v-for="items in dataNew(path)">
 	  			<div v-for="(item,$index) in items.item" v-if="($index + 1) < items.item.length" class="an_1" :class="item.lg ? 'linearGradientTopRight' : 'linearGradientLeftTop'" :style="item.style"></div>
 	  		</div>
-	  		<div style="offset-path:path('M1540,622.5h58.4c0,0,21.8,10.1,0,21.8h-39.5c0,0-11.1-1.2-11.5,11.5v13.8')">
-	  			
+	  	</div>
+	  	<div class="pos-a left0 top0 an_2" :style="'width:'+Width+'px;height:'+Height+'px;z-index:-1;animation-delay: '+(times+0.5)+'s;'">
+	  		<div class="bg-red bgImages pos-a top0 left0 bottom0 right0"  :style="polygon(items.item)" v-for="(items,$index) in path" v-if="polygonNo.indexOf($index) == -1"></div>
+	  	</div>
+  	</div>
+
+	<!-- ps4 2 -->
+  	<div class="pos-r bg-orange" v-else>
+  		 <div class="pos-r text-white an_3" :style="'width:1920px;height:1200px;z-index: 1;animation-delay: '+(times+2)+'s;'">
+	  		<div v-for="items in dataNew(ps4_path)">
+	  			<div v-for="(item,$index) in items.item" v-if="($index + 1) < items.item.length" class="an_1" :class="item.lg ? 'linearGradientTopRight' : 'linearGradientLeftTop'" :style="item.style"></div>
 	  		</div>
 	  	</div>
-<!-- 	  	<div class="pos-a left0 top0 an_2" :style="'width:'+Width+'px;height:'+Height+'px;z-index:-1;animation-delay: '+(times+0.5)+'s;'">
+	  	<div class="pos-a left0 top0 an_2" :style="'width:1920px;height:1200px;z-index:0;animation-delay: '+(times+1.5)+'s;'">
 	  		<div class="bg-red bgImages_2 pos-a top0 left0 bottom0 right0"  :style="polygon(items.item)" v-for="(items,$index) in ps4_path_polygon"></div>
-	  	</div> -->
+	  	</div>
   	</div>
+
+
+
 	<!-- <img src="../../assets/mayi.svg" alt=""> -->
 <!--   	<div>
   		<div class="pos-r" :style="'width:'+Width+'px;height:'+Height+'px;'" v-for="(items,$indexs) in path">
@@ -35,9 +48,9 @@ export default {
   	name: 'Ps4',
   	data () {
 	    return {
-	    	Width:1920,
-	    	Height:800,
-	    	path:[			//从svg 提取path线性路径坐标    l 线性渐变的方向 false从左下到向上，true 从左上到右下 
+	    	Width:900,
+	    	Height:460,
+	    	path:[			//从svg 提取path线性路径坐标
 	    		{
 	    			item:[
 		    			{x:563.9, y:361.4 ,o:'bottom left'},
@@ -46,7 +59,8 @@ export default {
 		    			{x:876.4, y:156.5 ,o:'top right'},
 		    			{x:563.9, y:361.4 ,o:'top right'}
 	             	]
-	    		},
+	    		}
+	    		,
 	    		{
 	    			item:[
 		    			{x:892.9, y:103.1 ,o:'bottom right'},
@@ -187,7 +201,6 @@ export default {
 	             	]
 	    		}
 
-	    		//{x:},
 	    	],
 	    	ps4_path:[
 	    		{
@@ -352,11 +365,8 @@ export default {
 	    			]
 	    		}
 	    	],
-
-
-	    	// 838.8,240 769.8,566.4 743.3,566.4 821.1,240    
-	    	times:1,
-	    	polygonNo:[1,2,5,7],
+	    	times:5,
+	    	polygonNo:[5,7],
 	    	ps4_path_polygon:[
 	    		{
 	    			item:[
@@ -382,12 +392,16 @@ export default {
 	    				{x:83.3, y:509.7 ,o:'bottom left'}
 	    			]
 	    		}
-	    	]
+	    	],
+	    	show:true
 	    }
   	},
   	computed: {
-  		dataNew(){
-  			let items = this.ps4_path;
+  		
+  	},
+	methods: {
+		dataNew(data){
+  			let items = data;
   			var sumC = 0,			//每组斜线C总长
   				lG = false, 		//线性渐变的方向
   				path = '',			//每组坐标点集合
@@ -403,7 +417,10 @@ export default {
 
 	  				if (ss.item[index+1]) {
 
-	  					lG = this.linearGradient(item,ss.item[index+1])
+	  					// 取斜线方向
+	  					lG = this.linearGradient(item,ss.item[index+1]);
+
+	  					// 取斜线dom width height top left
 	  					path = this.pathLine(item,ss.item[index+1])
 
 	  					var t = index > 0 ? (ss.item[index-1].times) : [0,0] //取上一组动画时间
@@ -418,31 +435,30 @@ export default {
 			})
 
   			return items
-  		}
-  	},
-	methods: {
+  		},
         pathLine:function(c1,c2){
             var c1 = c1, 		//坐标起点 x y
                 c2 = c2,		//坐标终点 x y
-                top = '',		//斜线盒子top值
-                right = '',		//斜线盒子right值
                 width = '',		//斜线盒子width值
                 height = '',	//斜线盒子height值
+                top = '',		//斜线盒子top值
+                left = '',		//斜线盒子left值
                 border = '',
                 origin = c1.o,
                 px = 'px;',
                 path = ''
 
-            //取两个y坐标最小值
-            top = 'top:' + Math.min(c1.y,c2.y) + px;
-            //画布宽度值减两个x坐标最大值
-            right = 'right:' + (this.Width - Math.max(c1.x,c2.x)) + px;
             //取两个x坐标间距离
             width = 'width:' + Math.abs(c1.x - c2.x) + px;
             //取两个yx坐标间距离
             height = 'height:' + Math.abs(c1.y - c2.y) + px;
+            //取两个y坐标最小值
+            top = 'top:' + Math.min(c1.y,c2.y) + px;
+            //取两个x坐标最小值
+            left = 'left:' + Math.min(c1.x,c2.x) + px;
             //缩放展开所需要的偏移量
             origin = 'transform-origin:' + origin + ';';
+
             //判断宽度为0或高度为0 设置border为1px实线
             border = (c1.x == c2.x) ? 'border:1px solid currentColor;' : (c1.y == c2.y) ? 'border:1px solid currentColor;' : '';
 
@@ -451,7 +467,7 @@ export default {
 
 
             //组成style
-            path = top + right + width + height + border + origin
+            path = top + left + width + height + border + origin
             return path
         },
         durationDelay:function(c1,c2,index,length,sum,t){
@@ -466,7 +482,7 @@ export default {
                 sum = sum,
                 style = ''
 
-            // console.log(t)
+            // 每条线平均时间
             // duration = (this.times / length);
             // delay = duration * (index - 1);
             // duration = duration * (index - 1);
@@ -550,7 +566,7 @@ export default {
     	content: '';
     	position: absolute;
     	background: url(../../assets/mayi.svg) no-repeat center;
-	    transform: skew(-45deg,15deg) scale(1.2,0.8) translate(-5%,-5%);
+	    transform: skew(-45deg,15deg) scale(1.3,0.9);
 	    left: 0;
 	    right: 0;
 	    top: 0;
@@ -587,6 +603,12 @@ export default {
     	animation-duration: .5s;
     	animation-fill-mode: forwards;
 	}
+	.an_3{
+    	animation: opacity_2 linear;
+    	
+    	animation-duration: .5s;
+    	animation-fill-mode: forwards;
+	}
     @keyframes scale_1
 	{
 		from {
@@ -603,6 +625,15 @@ export default {
 		}
 		to {
 			opacity: 1;
+		}
+	}
+	@keyframes opacity_2
+	{
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
 		}
 	}
 </style>
