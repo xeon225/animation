@@ -2,14 +2,14 @@
   <div id="drawingList">
     <div class="flex-container left">
       <div class="pos-r text-light margin50 flex-container center" :style="'width:'+(Width+namePx*2)+'px;' + 'height:'+(Width+namePx*2)+'px;'">
-        
+        <!-- 雷达网 -->
         <div class="pos-r text-light" :style="'width:'+Width+'px;' + 'height:'+Width+'px;'">
           <div class="pos-a top0 left0 right0 bottom0" :style="'border-radius:50%;transform: rotate('+$indexs*pi(round,piN)+'deg);'" v-for="(itemP,$indexs) in piN">
             <div class="pos-a" :style="'width:'+item.width+'px;' + 'height:'+item.height+'px;top:'+item.top+'px;left:'+item.left+'px;border-radius:50%;'" v-for="(item,$index) in dataItem(Width,pi(round,piN),cx,cy,r,rItems)">
               <div class="pos-a aa" :style="'width:'+item.data.width+'px;' + 'height:'+item.data.height+'px;' + 'top:'+item.data.top+'px;' + 'left:'+item.data.left+'px;'">
                 <div class="linearGradientTopRight left0 right0" :style="'height:'+ item.data.topHeight + 'px'">
                 </div>
-                <div class="linearGradientLeftTop left0 right0" :style="'top:' + item.data.topHeight + 'px;' + 'height:calc(100% - '+ item.data.topHeight + 'px);'">
+                <div v-if="$index == 0" class="linearGradientLeftTop left0 right0" :style="'top:' + item.data.topHeight + 'px;' + 'height:calc(100% - '+ item.data.topHeight + 'px);'">
                 </div>
               </div>
             </div>
@@ -26,13 +26,13 @@
             </div>
             <!-- 外线连接点 -->
             <div class="polygonLine pos-a top0 left0" :class="showL && 'an_show'"  style="width:100%;height:100%;opacity:0">
-              <div class="dian pos-a" v-if="$index+1 < dianData.length" v-for="(item,$index) in dianData" :style="'top:'+item.y+'px;left:'+item.x+'px;'">
+              <div class="dian pos-a" v-if="$index+1 < ability.length" v-for="(item,$index) in ability" :style="'top:'+item.y+'px;left:'+item.x+'px;'">
               </div>
             </div>
           </div>
         </div>
         <div class="pos-a top0 left0 right0 bottom0 text-red" :class="showL && 'an_show'" style="opacity:0">
-            <div class="pos-a name text-center" :style="'top:' + pathChart(pi(round,piN)*$index,cx+namePx,cy+namePx,r+namePx).top + 'px;left:'+pathChart(pi(round,piN)*$index,cx+namePx,cy+namePx,r+namePx).left+'px'" v-for="(item,$index) in dItems">
+            <div class="pos-a name text-center" :style="'top:' + pathChart(pi(round,piN)*($index+1),cx+namePx,cy+namePx,r+namePx).top + 'px;left:'+pathChart(pi(round,piN)*($index+1),cx+namePx,cy+namePx,r+namePx).left+'px'" v-for="(item,$index) in dItems">
               <span class="fs-16" v-text="item.name"></span>
             </div>
           </div>
@@ -48,7 +48,7 @@
       
     </div>
     
-    <div class="margin50 text-center fs-20" :style="'width:'+(Width+namePx*2)+'px;text-decoration:underline'" @click="CapabilityTable(dItems,pi(round,piN),cx,cy,r),showL=true">能力表</div>
+    <div class="paddingt50 margin50 text-center fs-20" :style="'width:'+(Width+namePx*2)+'px;text-decoration:underline'" @click="CapabilityTable(dItems,pi(round,piN),cx,cy,r),showL=true">雷达图</div>
 
 </div>
 </template>
@@ -70,7 +70,6 @@ export default {
 	    	b:0,					//角b
 	    	times:1,
 	    	rItems:[1,0.8,0.6,0.4,0.2],
-        // dItems:[50,80,60,90,70,100],
         showL:false,
         showLstyle:'',
         namePx:30,
@@ -103,9 +102,10 @@ export default {
 	    }
   	},
   	computed: {
+      //能力表外线
   		dataNew(){
         
-        let items = this.lineData(this.dItems,this.pi(this.round,this.piN),this.cx,this.cy,this.r);
+        let items = this.ability;
           items.forEach((item,index)=>{
             if (items[index+1]) {
               var lG = this.linearGradient(item,items[index+1])
@@ -114,15 +114,19 @@ export default {
             item['lg'] = lG;
             item['style'] = path;
           })
+        // console.log(items)
         return items
       },
-      dianData(){
+      //能力值坐标点
+      ability(){
         let items = this.lineData(this.dItems,this.pi(this.round,this.piN),this.cx,this.cy,this.r);
         return items
       },
+      //能力个数
       piN(){
         return this.dItems.length     //角度数
       },
+      //能力初始值
       polygonDefault(){
         var style = '',
             p = '50% 50%',
@@ -130,11 +134,11 @@ export default {
             for(var i=0; i<d; i++){
               style += p + ((i+1)<d?',':'');
             }
-            console.log(style)
         return style
       }
   	},
-	methods: {
+	 methods: {
+        //雷达网数据
         dataItem(w,pi,cx,cy,r,data){
           var width = w,
               cx = cx,                //圆心x
@@ -198,6 +202,7 @@ export default {
           polygon = 'width:100%;height:100%;clip-path: polygon('+polygon+');background:rgba(255,0,0,.4)'
           this.showLstyle = polygon;
         },
+        //取能力值坐标点
         lineData:function(data,pi,cx,cy,r){
           var d = data,
               n = 100,
@@ -228,6 +233,7 @@ export default {
           
           return data
         },
+        //判定线性渐变的方向
         linearGradient:function(c1,c2){
           var c1 = c1,    //坐标起点 x y
                 c2 = c2,    //坐标终点 x y
@@ -235,6 +241,7 @@ export default {
             linearGradient = (c1.x>c2.x === c1.y>c2.y);
             return linearGradient
         },
+        //取圆弧终点坐标
         pathChart:function(num,cx,cy,r){
             var cx = cx,                //圆心x
                 cy = cy,                //
@@ -244,9 +251,10 @@ export default {
                 item = {}
 
                 item = {'left':cx+(Math.sin(aa)*r),'top':cy-(Math.cos(aa)*r)}
-                // console.log(item)
+                // console.log(item,num)
             return item
         },
+        //取两坐标点直线
         pathLine:function(c1,c2){
           var c1 = c1,    //坐标起点 x y
               c2 = c2,    //坐标终点 x y
@@ -276,7 +284,7 @@ export default {
           // console.log(c1.l,(c1.x>c2.x && c1.y>c2.y))
           
 
-          console.log(c1.x,c2.x)
+          // console.log(c1.x,c2.x)
           //组成style
           path = top + left + width + height + border
           return path
@@ -293,23 +301,42 @@ export default {
                 laf = (a > 180) ? 1 : 0,
                 sf = 1,
                 show = show,
-                dd = r+'px '+r+'px ,'
-                    +r+'px '+y+'px ,',
-                ss = r+' '+r+' ,'
-                    +r+' '+y+' ,';
+                sinLx = (lx+(Math.sin(aa)*r))+'px ',    //角弧度终点x
+                cosLy = (ly-(Math.cos(aa)*r))+'px ',    //角弧度终点y
+
+                center = '50% 50%, ',                     //画布中心点
+                top = '50% 0, ',                          //画布top点
+                topRight = '100% 0, ',                    //画布topRight点
+                right = '100% 50%, ',                     //画布right点
+                rightBottom = '100% 100%, ',              //画布rightBottom点
+                bottom = '50% 100%, ',                    //画布bottom点
+                bottomLeft = '0 100%, ',                  //画布bottomLeft点
+                left = '0 50%, ',                         //画布left点
+                leftTop = '0 0, ',                        //画布leftTop点
+
+
+                dd = center + top,      //图形起始点
+
+                dd_90 = dd + topRight, //小于90度图形起始点
+                dd_180 = dd + topRight + right + rightBottom, //大于90度小于180图形起始点
+                dd_270 = dd + topRight + right + rightBottom + bottom + bottomLeft, //大于180度小于270图形起始点
+                dd_360 = dd + topRight + right + rightBottom + bottom + bottomLeft + left + leftTop; //大于270度小于360图形起始点
+
+                
                 if(a>270){
-                    dd += r*2+'px '+y+'px ,'+r*2+'px '+r*2+'px ,'
-                        +y+'px '+r*2+'px ,'
-                        +y+'px '+(ly-(Math.cos(aa)*r))+'px ,'
-                        +(lx+(Math.sin(aa)*r))+'px '+(ly-(Math.cos(aa)*r))+'px'
+                    dd = dd_360;
                 }else if(a>180){
-                dd += r*2+'px '+y+'px ,'+r*2+'px '+r*2+'px ,'+(ly-(Math.cos(aa)*r))+'px '+r*2+'px ,'+(lx+(Math.sin(aa)*r))+'px '+r*2+'px ,'+(lx+(Math.sin(aa)*r))+'px '+(ly-(Math.cos(aa)*r))+'px'
+                    dd = dd_270;
                 }else if(a>90){
-                    dd += r*2+'px '+y+'px ,'+r*2+'px '+(ly-(Math.cos(aa)*r))+'px ,'+(lx+(Math.sin(aa)*r))+'px '+(ly-(Math.cos(aa)*r))+'px'
+                    dd = dd_180;
                 }else{
-                    dd += (lx+(Math.sin(aa)*r))+'px '+y+'px ,'+(lx+(Math.sin(aa)*r))+'px '+(ly-(Math.cos(aa)*r))+'px'
+                    dd = dd_90;
                 }
+
+                dd += sinLx + cosLy
                 dd = 'clip-path: polygon('+dd+');'
+
+                // console.log(dd)
             return dd
         }
     }
@@ -384,56 +411,5 @@ export default {
       position: absolute;
       display:block;
     }
-/*    .xbox_logo{
-      background: url('../../assets/xbox_logo.jpeg') no-repeat center;
-      background-size:100% 100%;
-    }
-    .xbox_top:before{
-      content:'';
-      position: absolute;
-      top:0;
-      width: 100%;
-      height: 100%;
-      background: white;
-      clip-path: circle(50% at 18% 57%);
-    }
-    .xbox_top:after{
-      content:'';
-      position: absolute;
-      top:0;
-      width: 100%;
-      height: 100%;
-      background: white;
-      clip-path: circle(50% at 82% 57%);
-    }
-    .xbox_left{
-      right: 50%;
-      top: 8.5%;
-      border-radius:50%;
-    }
-    .xbox_right{
-      left: 50%;
-      top: 8.5%;
-      border-radius:50%;
-    }
-    .xbox_bottom:before{
-      content:'';
-      position: absolute;
-      top: 25%;
-      left: 6%;
-      width: 87.5%;
-      height: 143%;
-      background-color: white;
-      border-radius:50%   50%  50%  50%  / 60%   60%   40%  40%;
-    }
-    .xbox_bottom:after{
-      content:'';
-      position: absolute;
-      top:58%;
-      width:100%;
-      height:100%;
-      border-radius: 68.5% 0;
-      transform: rotate(-45deg);
-      background: black;
-    }*/
+    
 </style>

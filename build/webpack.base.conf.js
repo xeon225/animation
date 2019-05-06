@@ -24,7 +24,8 @@ module.exports = {
   entry: {
     app: './src/main.js',
     ps4:'./src/js/animation/ps4.js', //ps4
-    drawingList:'./src/js/animation/drawingList.js' //drawingList
+    drawingList:'./src/js/animation/drawingList.js', //雷达图
+    pieChart:'./src/js/animation/pieChart.js' //饼图
   },
   output: {
     path: config.build.assetsRoot,

@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <div><a href="/animation/ps4.html">ps4</a></div>
-     <div><a href="/animation/drawingList.html">drawingList</a></div>
+    <div><a href="/animation/drawingList.html">雷达图</a></div>
+    <div><a href="/animation/pieChart.html">饼状图</a></div>
   </div>
 </template>
 

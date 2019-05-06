@@ -94,7 +94,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunks: ['manifest', 'vendor', 'ps4']
     }),
 
-    // drawingList
+    // 雷达图
     new HtmlWebpackPlugin({
       filename: process.env.NODE_ENV === 'testing'
         ? '/animation/drawingList.html'
@@ -109,6 +109,23 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency',
       chunks: ['manifest', 'vendor', 'drawingList']
     }),
+
+    // 饼图
+    new HtmlWebpackPlugin({
+      filename: process.env.NODE_ENV === 'testing'
+        ? '/animation/pieChart.html'
+        : config.build.pieChart,
+      template: './tpl/animation/pieChart.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
+      chunksSortMode: 'dependency',
+      chunks: ['manifest', 'vendor', 'pieChart']
+    }),
+
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting

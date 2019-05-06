@@ -47,7 +47,9 @@ module.exports = {
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
     ps4: path.resolve(__dirname, '../dist/animation/ps4.html'),   //ps4
-    drawingList: path.resolve(__dirname, '../dist/animation/drawingList.html'),   //drawingList
+    drawingList: path.resolve(__dirname, '../dist/animation/drawingList.html'),   //雷达图
+    pieChart: path.resolve(__dirname, '../dist/animation/pieChart.html'),   //饼图
+
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',

@@ -65,13 +65,22 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks:['ps4']
     }),
-    // drawingList
+    // 雷达图
     new HtmlWebpackPlugin({
       filename: 'animation/drawingList.html',
       template: 'tpl/animation/drawingList.html',
       inject: true,
       chunks:['drawingList']
     }),
+    // 饼图
+    new HtmlWebpackPlugin({
+      filename: 'animation/pieChart.html',
+      template: 'tpl/animation/pieChart.html',
+      inject: true,
+      chunks:['pieChart']
+    }),
+
+    
     // copy custom static assets
     new CopyWebpackPlugin([
       {
