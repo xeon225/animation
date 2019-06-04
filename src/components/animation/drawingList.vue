@@ -49,7 +49,23 @@
     </div>
     
     <div class="paddingt50 margin50 text-center fs-20" :style="'width:'+(Width+namePx*2)+'px;text-decoration:underline'" @click="CapabilityTable(dItems,pi(round,piN),cx,cy,r),showL=true">雷达图</div>
-
+<!--     <div class="pos-r" style="width:186px;height:200px;">
+      <div class="pos-a paluosi" style="z-index: 1">
+        <div></div>
+      </div>
+      <div class="pos-a paluosi" style="top:50%">
+        <div></div>
+      </div>
+      <div class="pos-a paluosi" style="left:100%">
+        <div></div>
+      </div>
+      <div class="pos-a paluosi" style="top:25%;left:50%;z-index: 2">
+        <div></div>
+      </div>
+      <div class="pos-a paluosi" style="top:50%;left:100%;z-index: 2">
+        <div></div>
+      </div>
+    </div> -->
 </div>
 </template>
 
@@ -69,34 +85,35 @@ export default {
         cy:200,         //圆心y
 	    	b:0,					//角b
 	    	times:1,
-	    	rItems:[1,0.8,0.6,0.4,0.2],
+	    	// rItems:[1],
+        rItems:[1,0.8,0.6,0.4,0.2],
         showL:false,
         showLstyle:'',
         namePx:30,
         dItems:[
           {
             item:100,
-            name:'年龄'
+            name:'进攻'
           },
           {
             item:30,
-            name:'力量'
+            name:'技术'
           },
           {
             item:70,
-            name:'攻击力'
+            name:'体能'
           },
           {
             item:80,
-            name:'防御力'
+            name:'防守'
           },
           {
             item:50,
-            name:'灵活'
+            name:'力量'
           },
           {
             item:60,
-            name:'技术'
+            name:'速度'
           }
         ]
 	    }
@@ -131,6 +148,7 @@ export default {
         var style = '',
             p = '50% 50%',
             d = this.piN;
+            console.log(d)
             for(var i=0; i<d; i++){
               style += p + ((i+1)<d?',':'');
             }
@@ -181,7 +199,8 @@ export default {
         pi:function(r,piN){
           var n = 0;
           if (piN > 2 && piN < 91) {
-            n = parseInt(r/piN)
+            n = r/piN
+            console.log(r,piN,n)
           } else {
             n = 60
           }
@@ -248,8 +267,6 @@ export default {
                 r = r,
                 a = num,
                 aa = a*Math.PI/180,			//转成角度
-                item = {}
-
                 item = {'left':cx+(Math.sin(aa)*r),'top':cy-(Math.cos(aa)*r)}
                 // console.log(item,num)
             return item
@@ -345,6 +362,36 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .paluosi{
+      width:100%;
+      height:100%;
+    }
+    .paluosi>div{
+      width:100%;
+      height:50%;
+      background: lime;
+      clip-path:polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    }
+    .paluosi:before{
+      content: '';
+      position: absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      background: red;
+      clip-path:polygon(50% 50%, 50% 100%, 0 75%, 0 25%);
+    }
+    .paluosi:after{
+      content: '';
+      position: absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      background: yellow;
+      clip-path:polygon(50% 50%, 50% 100%, 100% 75%, 100% 25%);
+    }
     .line{
       background: red;
       height:100px;
@@ -391,9 +438,6 @@ export default {
     }
     .transition_an{
       transition:-webkit-clip-path 0.5s linear;
-    }
-    .an_6{
-      clip-path:polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
     }
     .an_show{
       transition-property:opacity;

@@ -35,43 +35,44 @@ export default {
         round:360,          //圆周度
 	    	cx:200,         //圆心x
         cy:200,         //圆心y
-	    	b:0,					//角b
-	    	times:1,
-	    	rItems:[1,0.8,0.6,0.4,0.2],
-        // dItems:[50,80,60,90,70,100],
         showL:false,
         showLstyle:'',
         namePx:30,
         dItems:[
           {
             item:100,
-            name:'年龄',
+            name:'进攻',
             color:'#D32F2F'
           },
           {
             item:20,
-            name:'力量',
+            name:'技术',
             color:'#FF4081'
           },
           {
             item:30,
-            name:'攻击力',
+            name:'体能',
             color:'#7B1FA2'
           },
           {
             item:80,
-            name:'防御力',
+            name:'防守',
             color:'#7C4DFF'
           },
           {
             item:40,
-            name:'灵活',
+            name:'力量',
             color:'#303F9F'
           },
           {
             item:10,
-            name:'技术',
+            name:'速度',
             color:'#448AFF'
+          },
+          {
+            item:40,
+            name:'速度',
+            color:'#fff'
           }
         ],
         pieShow:false

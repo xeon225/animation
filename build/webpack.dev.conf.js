@@ -79,6 +79,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks:['pieChart']
     }),
+    // 折线图
+    new HtmlWebpackPlugin({
+      filename: 'animation/lineChart.html',
+      template: 'tpl/animation/lineChart.html',
+      inject: true,
+      chunks:['lineChart']
+    }),
 
     
     // copy custom static assets

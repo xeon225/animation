@@ -49,6 +49,7 @@ module.exports = {
     ps4: path.resolve(__dirname, '../dist/animation/ps4.html'),   //ps4
     drawingList: path.resolve(__dirname, '../dist/animation/drawingList.html'),   //雷达图
     pieChart: path.resolve(__dirname, '../dist/animation/pieChart.html'),   //饼图
+    lineChart: path.resolve(__dirname, '../dist/animation/lineChart.html'),   //折线图
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
