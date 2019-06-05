@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/bingshan.svg">
     <router-view/>
+    <img src="./assets/bingshanbear.svg" class="margint50">
   </div>
 </template>
 

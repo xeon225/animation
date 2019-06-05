@@ -68,11 +68,6 @@ export default {
             item:10,
             name:'速度',
             color:'#448AFF'
-          },
-          {
-            item:40,
-            name:'速度',
-            color:'#fff'
           }
         ],
         pieShow:false

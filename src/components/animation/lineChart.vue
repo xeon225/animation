@@ -125,7 +125,7 @@ export default {
         for (var i = 1; i <= this.xDegree; i++) {
           arr.push(Math.floor(Math.random()*this.max+this.min));
         }
-        console.log(arr)
+        // console.log(arr)
         return arr
       },
       // 点
@@ -193,7 +193,7 @@ export default {
           left = index * this.Width / this.xDegree
           dNew.push({'y':top,'x':left})
         })
-        console.log(dNew)
+        // console.log(dNew)
         return dNew
       },
       linerange(){

@@ -1,10 +1,12 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div><a href="/animation/ps4.html">ps4</a></div>
-    <div><a href="/animation/drawingList.html">雷达图</a></div>
-    <div><a href="/animation/pieChart.html">饼状图</a></div>
-    <div><a href="/animation/lineChart.html">折线图</a></div>
+    <h1 class="marginv50">{{ msg }}</h1>
+    <div class="lh-28">
+      <div><a href="/animation/ps4.html">ps4</a></div>
+      <div><a href="/animation/drawingList.html">雷达图</a></div>
+      <div><a href="/animation/pieChart.html">饼状图</a></div>
+      <div><a href="/animation/lineChart.html">折线图</a></div>
+    </div>
   </div>
 </template>
 
@@ -13,7 +15,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'css3 svg demo'
     }
   }
 }
