@@ -50,7 +50,7 @@ module.exports = {
     drawingList: path.resolve(__dirname, '../dist/animation/drawingList.html'),   //雷达图
     pieChart: path.resolve(__dirname, '../dist/animation/pieChart.html'),   //饼图
     lineChart: path.resolve(__dirname, '../dist/animation/lineChart.html'),   //折线图
-
+    antinomy: path.resolve(__dirname, '../dist/animation/antinomy.html'),   //悖论空间
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',

@@ -6,6 +6,7 @@
       <div><a href="/animation/drawingList.html">雷达图</a></div>
       <div><a href="/animation/pieChart.html">饼状图</a></div>
       <div><a href="/animation/lineChart.html">折线图</a></div>
+      <div><a href="/animation/antinomy.html">悖论空间</a></div>
     </div>
   </div>
 </template>

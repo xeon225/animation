@@ -86,7 +86,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks:['lineChart']
     }),
-
+    // 悖论空间
+    new HtmlWebpackPlugin({
+      filename: 'animation/antinomy.html',
+      template: 'tpl/animation/antinomy.html',
+      inject: true,
+      chunks:['antinomy']
+    }),
     
     // copy custom static assets
     new CopyWebpackPlugin([

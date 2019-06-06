@@ -26,7 +26,8 @@ module.exports = {
     ps4:'./src/js/animation/ps4.js', //ps4
     drawingList:'./src/js/animation/drawingList.js', //雷达图
     pieChart:'./src/js/animation/pieChart.js', //饼图
-    lineChart:'./src/js/animation/lineChart.js' //折线图
+    lineChart:'./src/js/animation/lineChart.js', //折线图
+    antinomy:'./src/js/animation/antinomy.js' //悖论空间
   },
   output: {
     path: config.build.assetsRoot,
