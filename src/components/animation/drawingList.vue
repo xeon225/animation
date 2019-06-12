@@ -77,12 +77,12 @@ export default {
   	name: 'DrawingList',
   	data () {
 	    return {
-	    	Width:400,				//画布长宽
-	    	r:200,					//圆半径长度
+	    	Width:200,				//画布长宽
+	    	r:100,					//圆半径长度
 	    	// piN:6,					//角度数
         round:360,          //圆周度
-	    	cx:200,         //圆心x
-        cy:200,         //圆心y
+	    	cx:100,         //圆心x
+        cy:100,         //圆心y
 	    	b:0,					//角b
 	    	times:1,
 	    	// rItems:[1],
