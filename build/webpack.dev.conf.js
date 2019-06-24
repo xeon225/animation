@@ -93,6 +93,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks:['antinomy']
     }),
+    // 马姨呀嘿
+    new HtmlWebpackPlugin({
+      filename: 'animation/myyh.html',
+      template: 'tpl/animation/myyh.html',
+      inject: true,
+      chunks:['myyh']
+    }),
     
     // copy custom static assets
     new CopyWebpackPlugin([

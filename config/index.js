@@ -51,6 +51,7 @@ module.exports = {
     pieChart: path.resolve(__dirname, '../dist/animation/pieChart.html'),   //饼图
     lineChart: path.resolve(__dirname, '../dist/animation/lineChart.html'),   //折线图
     antinomy: path.resolve(__dirname, '../dist/animation/antinomy.html'),   //悖论空间
+    myyh: path.resolve(__dirname, '../dist/animation/myyh.html'),   //马姨呀嘿
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
