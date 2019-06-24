@@ -1,18 +1,19 @@
 <template>
   <div id="antinomy">
-    <div class="pos-r" style="width: 2000px;height:1148px;">
+    <div class="pos-r" style="width: 2000px;height:1148px;" v-show="false">
+      <div class="pos-f right20 top20 background border paddingh20 paddingv10 radius fs-20 bg-white" style="z-index: 999999999;" @click="cssLinear = !cssLinear">边框</div>
       <div class="pos-r" style="width:173.2px;height:200px;">
         <div class="pos-a paluosi" :style="arrData(item,$index)" v-for="(item,$index) in dItems">
           <div></div>
         </div>
       </div>
-      <div class="pos-a top0 right0 left0 bottom0 text-dark" :style="'z-index:'+zI+zI">
+      <div class="pos-a top0 right0 left0 bottom0 text-dark" :style="'z-index:'+zI+zI" v-show="cssLinear">
         <div class="pos-a top0 right0 left0 bottom0 linearGradientOne"></div>
         <div class="pos-a top0 right0 left0 bottom0 linearGradientTwo"></div>
         <div class="pos-a top0 right0 left0 bottom0 linearGradientThree"></div>
       </div>
     </div>
-    <div class="padding50" v-show="false">
+    <div class="padding50">
       <div class="flex-container left">
         <div class="paddingb50">
           <div class="flex-container left">
@@ -57,20 +58,21 @@ export default {
       colorList:['rgba(0,0,0,0)','#ab8a9f','#403f3b','#d2bfb9'],
       dItems:[
         {x:0,y:0,z:0},
-        {x:1,y:0,z:0},
-        {x:2,y:0,z:0},
-        {x:3,y:0,z:0},
-        {x:4,y:0,z:0},
-        {x:5,y:0,z:0},
-        {x:0,y:1,z:0},
-        {x:0,y:2,z:0},
-        {x:0,y:3,z:0},
-        {x:0,y:4,z:0},
-        {x:0,y:5,z:0},
+        // {x:1,y:0,z:0},
+        // {x:2,y:0,z:0},
+        // {x:3,y:0,z:0},
+        // {x:4,y:0,z:0},
+        // {x:5,y:0,z:0},
+        // {x:0,y:1,z:0},
+        // {x:0,y:2,z:0},
+        // {x:0,y:3,z:0},
+        // {x:0,y:4,z:0},
+        // {x:0,y:5,z:0},
 
-        {x:5,y:0,z:-1},
-        {x:5,y:0,z:-2},
-        {x:5,y:0,z:-3},
+        // {x:5,y:0,z:-1},
+        // {x:5,y:0,z:-2},
+        // {x:5,y:0,z:-3},
+        // {x:5,y:0,z:-4},
         // {x:0,y:5,z:1},
       ],
       svgItems:[
@@ -369,7 +371,8 @@ export default {
        {points:"50 519.62 0 548.49 0 490.75 50 519.62",color:0},
        {points:"50 577.35 0 606.22 0 548.49 50 577.35",color:0}
       ],
-      stroke:true
+      stroke:true,
+      cssLinear:true
     }
 	},
 	computed: {
