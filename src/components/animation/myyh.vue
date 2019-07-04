@@ -1,6 +1,37 @@
 <template>
   <div id="Myyh">
-    <div>
+    <div class="clock">
+        <svg width="500px" height="500px" viewBox="0 0 110 110">
+            <g style="transform: translate(5px,5px);" stroke="#4e2828">
+                <!-- 时钟表盘 -->
+                <circle fill="white" cx="50" stroke-width="3" cy="50" r="50" :style="'stroke-dasharray:'+strokeDasharray(50)"/>
+                <!-- 时钟表盘 -->
+                <circle fill="none" cx="50" stroke-width="1" cy="50" r="50" stroke="white" transform="translate(0, 100) rotate(-90)" :stroke-dasharray="0 +' '+ strokeDasharray(50)">
+                    <animate attributeName="stroke-dasharray" :to="strokeDasharray(50)+' '+strokeDasharray(50)" dur="1s" repeatCount="indefinite" />
+                </circle>
+                <!-- 刻度小 -->
+                <circle fill="white" cx="50" cy="50" r="45" stroke-width="7" :style="degree(45,1,60)"/>
+                <!-- 刻度大 -->
+                <circle fill="white" cx="50" cy="50" r="45" stroke-width="7" style="stroke-dashoffset: 1;" :style="degree(45,3,12)"/>
+                <!-- 指针 -->
+                <g style="transform: translate(0.5px,0);">
+                    <g transform="translate(50, 50) rotate(180)">
+                        <!-- 秒 -->
+                        <line stroke-width="1"  stroke-linecap="round" x1="0" y1="0" x2="0" y2="45" :transform="second"/>
+                        <!-- 分 -->
+                        <line stroke-width="2"  stroke-linecap="round" x1="0" y1="0" x2="0" y2="35" :transform="minute"/>
+                        <!-- 时 -->
+                        <line stroke-width="3"  stroke-linecap="round" x1="0" y1="0" x2="0" y2="25" :transform="hour"/>
+                    </g>
+                    <circle fill="black" cx="50" cy="50" r="2" stroke-width="1"/>
+                </g>
+                  
+
+            </g>
+
+        </svg>
+    </div>
+    <div v-show="false">
         <svg width="420px" height="427px" viewBox="0 0 120 127">
         
         <defs>
@@ -92,10 +123,10 @@
                             <path d="M104.9595,102.2599 L104.9595,106.2909 L103.9755,105.7069 C103.7385,105.5669 103.4675,105.4919 103.1905,105.4919 L98.6465,105.4919 L98.6465,109.3619 L101.5755,109.3619 C101.8515,109.3619 102.1235,109.2879 102.3605,109.1469 L103.3445,108.5629 L103.3445,113.3929 L102.3605,112.8099 C102.1235,112.6689 101.8515,112.5939 101.5755,112.5939 L98.6465,112.5939 L98.6465,118.8689 L103.1905,118.8689 C103.4675,118.8689 103.7385,118.7949 103.9755,118.6539 L104.9595,118.0709 L104.9595,122.1009 L94.6155,122.1009 L95.1995,121.1179 C95.3405,120.8809 95.4145,120.6089 95.4145,120.3329 L95.4145,104.0279 C95.4145,103.7519 95.3405,103.4809 95.1995,103.2439 L94.6155,102.2599 L104.9595,102.2599 Z" id="Fill-117" fill="#171348"></path>
                             <path d="M109.9277,120.276 C109.9277,120.589 110.0107,120.897 110.1717,121.167 L110.7267,122.102 L105.8967,122.102 L106.4517,121.167 C106.6117,120.898 106.6957,120.59 106.6957,120.276 L106.6957,104.086 C106.6957,103.773 106.6117,103.464 106.4517,103.195 L105.8967,102.26 L110.7267,102.26 L110.1727,103.195 C110.0117,103.464 109.9277,103.773 109.9277,104.086 L109.9277,120.276 Z" id="Fill-119" fill="#171348"></path>
                         </g>
-                        <g class="fonts">
-                            <polygon id="Fill-121" fill="#FFFFFF" points="25.9253 120.2296 26.7233 121.5756 21.8933 121.5756 22.6923 120.2296 22.6923 112.0806 19.7253 121.5756 17.2653 121.5756 14.2983 112.0806 14.2983 120.2296 15.0973 121.5756 10.2673 121.5756 11.0663 120.2296 11.0663 103.0816 10.2673 101.7346 15.0973 101.7346 14.5743 102.6166 18.4953 115.1676 22.4163 102.6166 21.8933 101.7346 26.7233 101.7346 25.9253 103.0816">
-                            </polygon>
-                            <path d="M34.7827,107.6969 L34.7827,104.9669 L31.7007,104.9669 L31.7007,109.4759 L34.7827,107.6969 Z M38.0147,119.7799 C38.0147,120.0739 38.0937,120.3629 38.2437,120.6169 L38.8137,121.5759 L33.9837,121.5759 L34.5527,120.6169 C34.7037,120.3629 34.7827,120.0739 34.7827,119.7799 L34.7827,111.4299 L31.7007,113.2079 L31.7007,119.7799 C31.7007,120.0739 31.7807,120.3629 31.9307,120.6169 L32.5007,121.5759 L27.6707,121.5759 L28.2397,120.6169 C28.3897,120.3629 28.4697,120.0739 28.4697,119.7799 L28.4697,103.5309 C28.4697,103.2369 28.3897,102.9469 28.2397,102.6949 L27.6707,101.7349 L38.8137,101.7349 L38.2437,102.6949 C38.0937,102.9479 38.0147,103.2369 38.0147,103.5309 L38.0147,119.7799 Z" id="Fill-123" ref="fills" fill="#FFFFFF"></path>
+                        <g class="fonts" ref="list">
+                            <path id="Fill-121" fill="#FFFFFF" d="M25.9253,120.2296 26.7233,121.5756 21.8933,121.5756 22.6923,120.2296 22.6923,112.0806 19.7253,121.5756 17.2653,121.5756 14.2983,112.0806 14.2983,120.2296 15.0973,121.5756 10.2673,121.5756 11.0663,120.2296 11.0663,103.0816 10.2673,101.7346 15.0973,101.7346 14.5743,102.6166 18.4953,115.1676 22.4163,102.6166 21.8933,101.7346 26.7233,101.7346 25.9253,103.0816 Z">
+                            </path>
+                            <path d="M34.7827,107.6969 L34.7827,104.9669 L31.7007,104.9669 L31.7007,109.4759 L34.7827,107.6969 Z M38.0147,119.7799 C38.0147,120.0739 38.0937,120.3629 38.2437,120.6169 L38.8137,121.5759 L33.9837,121.5759 L34.5527,120.6169 C34.7037,120.3629 34.7827,120.0739 34.7827,119.7799 L34.7827,111.4299 L31.7007,113.2079 L31.7007,119.7799 C31.7007,120.0739 31.7807,120.3629 31.9307,120.6169 L32.5007,121.5759 L27.6707,121.5759 L28.2397,120.6169 C28.3897,120.3629 28.4697,120.0739 28.4697,119.7799 L28.4697,103.5309 C28.4697,103.2369 28.3897,102.9469 28.2397,102.6949 L27.6707,101.7349 L38.8137,101.7349 L38.2437,102.6949 C38.0937,102.9479 38.0147,103.2369 38.0147,103.5309 L38.0147,119.7799 Z" id="Fill-123" fill="#FFFFFF"></path>
                             <path d="M50.9155,101.7052 L50.2025,102.9102 C50.1455,103.0042 50.0985,103.1042 50.0605,103.2072 L47.0745,111.3212 C46.9995,111.5232 46.9615,111.7362 46.9615,111.9522 L46.9615,119.4612 C46.9615,119.7872 47.0495,120.1052 47.2145,120.3852 L47.7595,121.3052 L42.9295,121.3052 L43.4745,120.3852 C43.6395,120.1052 43.7275,119.7872 43.7275,119.4612 L43.7275,111.9522 C43.7275,111.7372 43.6895,111.5232 43.6145,111.3212 L40.6295,103.2072 C40.5905,103.1032 40.5425,103.0042 40.4865,102.9102 L39.7725,101.7052 L44.6025,101.7052 L44.2435,102.3112 C43.9655,102.7802 43.9135,103.3492 44.1015,103.8602 L45.3435,107.2352 L45.3445,107.2322 L45.3455,107.2352 L46.5875,103.8602 C46.7755,103.3492 46.7235,102.7802 46.4465,102.3112 L46.0865,101.7052 L50.9155,101.7052 Z" id="Fill-125" fill="#FFFFFF"></path>
                             <path d="M55.9048,119.7506 C55.9048,120.0636 55.9878,120.3716 56.1488,120.6416 L56.7038,121.5756 L51.8738,121.5756 L52.4288,120.6416 C52.5888,120.3716 52.6728,120.0646 52.6728,119.7506 L52.6728,103.5606 C52.6728,103.2466 52.5888,102.9386 52.4288,102.6696 L51.8738,101.7346 L56.7038,101.7346 L56.1498,102.6696 C55.9888,102.9386 55.9048,103.2466 55.9048,103.5606 L55.9048,119.7506 Z" id="Fill-127" fill="#FFFFFF"></path>
                             <path d="M68.7993,101.7052 L68.0863,102.9102 C68.0293,103.0042 67.9823,103.1042 67.9443,103.2072 L64.9583,111.3212 C64.8833,111.5232 64.8453,111.7362 64.8453,111.9522 L64.8453,119.4612 C64.8453,119.7872 64.9333,120.1052 65.0983,120.3852 L65.6433,121.3052 L60.8133,121.3052 L61.3583,120.3852 C61.5233,120.1052 61.6113,119.7872 61.6113,119.4612 L61.6113,111.9522 C61.6113,111.7372 61.5733,111.5232 61.4993,111.3212 L58.5133,103.2072 C58.4743,103.1032 58.4263,103.0042 58.3703,102.9102 L57.6563,101.7052 L62.4863,101.7052 L62.1273,102.3112 C61.8493,102.7802 61.7983,103.3492 61.9853,103.8602 L63.2273,107.2352 L63.2283,107.2322 L63.2293,107.2352 L64.4713,103.8602 C64.6593,103.3492 64.6073,102.7802 64.3303,102.3112 L63.9703,101.7052 L68.7993,101.7052 Z" id="Fill-129" fill="#FFFFFF"></path>
@@ -104,7 +135,11 @@
                             <path d="M104.3061,101.7345 L104.3061,105.7655 L103.3221,105.1815 C103.0851,105.0405 102.8131,104.9665 102.5361,104.9665 L97.9931,104.9665 L97.9931,108.8365 L100.9211,108.8365 C101.1971,108.8365 101.4691,108.7625 101.7061,108.6215 L102.6901,108.0375 L102.6901,112.8675 L101.7061,112.2835 C101.4691,112.1435 101.1971,112.0685 100.9211,112.0685 L97.9931,112.0685 L97.9931,118.3435 L102.5361,118.3435 C102.8131,118.3435 103.0851,118.2695 103.3221,118.1285 L104.3061,117.5445 L104.3061,121.5755 L93.9621,121.5755 L94.5461,120.5915 C94.6861,120.3555 94.7611,120.0835 94.7611,119.8075 L94.7611,103.5025 C94.7611,103.2265 94.6861,102.9555 94.5461,102.7185 L93.9621,101.7345 L104.3061,101.7345 Z" id="Fill-135" fill="#FFFFFF"></path>
                             <path d="M109.2739,119.7506 C109.2739,120.0636 109.3569,120.3716 109.5179,120.6416 L110.0729,121.5756 L105.2429,121.5756 L105.7979,120.6416 C105.9579,120.3716 106.0419,120.0646 106.0419,119.7506 L106.0419,103.5606 C106.0419,103.2466 105.9579,102.9386 105.7979,102.6696 L105.2429,101.7346 L110.0729,101.7346 L109.5189,102.6696 C109.3579,102.9386 109.2739,103.2466 109.2739,103.5606 L109.2739,119.7506 Z" id="Fill-137" fill="#FFFFFF"></path>
                         </g>
-                        
+<!--                         <g class="fonts" v-show="start">
+                          <path v-for="(item,$index) in pathD" :d="item.points" fill="white" :ref="item.id" :style="'stroke-dashoffset: -160px;'">
+                            
+                          </path>
+                        </g> -->
                     </g>
 
                     
@@ -121,343 +156,125 @@ import Vue from 'vue';
 
 
 export default {
-  	name: 'Myyh',
-  	data () {
-	    return {
-	    }
-  	},
-  	computed: {
-      //能力表外线
-  		
-      //能力值坐标点
-      ability(){
-        let items = this.lineData(this.dItems,this.pi(this.round,this.piN),this.cx,this.cy,this.r);
-        return items
-      },
-      //能力个数
-      piN(){
-        return this.dItems.length     //角度数
-      },
-      //能力初始值
-      polygonDefault(){
-        var style = '',
-            p = '50% 50%',
-            d = this.piN;
-            console.log(d)
-            for(var i=0; i<d; i++){
-              style += p + ((i+1)<d?',':'');
-            }
-        return style
-      }
-  	},
-  mounted(){
-    this.lengthPath();
-  },
-	 methods: {
-      lengthPath(){
-        var path = this.$refs.fills;
-        var length = path.getTotalLength();
-        console.log(length)
-        return length
-      },
-        //雷达网数据
-        dataItem(w,pi,cx,cy,r,data){
-          var width = w,
-              cx = cx,                //圆心x
-              cy = cy,
-              pi = pi,
-              r = r,
-              d = data,
-              styleD = [],
-              styleObj = {
-                width:'',
-                height:'',
-                top:'',
-                left:'',
-                data:{
-                  width:'',
-                  height:'',
-                  top:'',
-                  left:'',
-                  topHeight:''
-                }
-              }
-          d.forEach((item,index)=>{
-            styleObj.width = width * item;   //多边形dom宽
-            styleObj.height = width * item;   //多边形dom高
-            styleObj.top = width/2 * (1-item);   //多边形dom top
-            styleObj.left = width/2 * (1-item);   //多边形dom left
-
-            // pathChart(pi,cx*item,cy*item,r*item)[0]-(Width/2)*item)
-            styleObj.data.width = this.pathChart(pi,cx*item,cy*item,r*item).left - width/2*item;
-            styleObj.data.height = r*item;
-            styleObj.data.top = 0;
-            styleObj.data.left = cx*item;
-            styleObj.data.topHeight = this.pathChart(pi,cx*item,cy*item,r*item).top;
-            styleD.push(JSON.parse(JSON.stringify(styleObj)))
-          })
-          // console.log(styleD)
-          return styleD
-        },
-        //取角度
-        pi:function(r,piN){
-          var n = 0;
-          if (piN > 2 && piN < 91) {
-            n = r/piN
-            console.log(r,piN,n)
-          } else {
-            n = 60
-          }
-          return n
-        },
-        //图表
-        CapabilityTable:function(data,pi,cx,cy,r){
-          var d = data,
-              n = 100,
-              polygon = '',
-              px = 'px',
-              x = r/n;      //数表比例
-
-          d.forEach((item,index)=>{
-            polygon += this.pathChart(pi*(index+1),cx,cx,x*item.item).left + px + ' ' + this.pathChart(pi*(index+1),cx,cx,x*item.item).top + px + (index+1 < data.length ? ',':'')
-            
-          })
-          polygon = 'width:100%;height:100%;clip-path: polygon('+polygon+');background:rgba(255,0,0,.4)'
-          this.showLstyle = polygon;
-        },
-        //取能力值坐标点
-        lineData:function(data,pi,cx,cy,r){
-          var d = data,
-              n = 100,
-              polygon = '',
-              px = 'px',
-              lineData = {},
-              data = [],
-              top = '',
-              left = '',
-              x = r/n;      //数表比例
-
-          d.forEach((item,index)=>{
-            lineData['x'] = this.pathChart(pi*(index+1),cx,cx,x*item.item).left;
-            lineData['y'] = this.pathChart(pi*(index+1),cx,cx,x*item.item).top
-            if (index == 0) {
-              left = lineData['x'];
-              top = lineData['y'];
-            }
-            data.push(JSON.parse(JSON.stringify(lineData)))
-
-            if (d.length == (index + 1)) {
-              lineData['x'] = left;
-              lineData['y'] = top;
-              data.push(JSON.parse(JSON.stringify(lineData)))
-            }
-            // console.log(data)
-          })
-          
-          return data
-        },
-        //判定线性渐变的方向
-        linearGradient:function(c1,c2){
-          var c1 = c1,    //坐标起点 x y
-                c2 = c2,    //坐标终点 x y
-                linearGradient = false //线性渐变的方向 false从左下到右上，true 从左上到右下 
-            linearGradient = (c1.x>c2.x === c1.y>c2.y);
-            return linearGradient
-        },
-        //取圆弧终点坐标
-        pathChart:function(num,cx,cy,r){
-            var cx = cx,                //圆心x
-                cy = cy,                //
-                r = r,
-                a = num,
-                aa = a*Math.PI/180,			//转成角度
-                item = {'left':cx+(Math.sin(aa)*r),'top':cy-(Math.cos(aa)*r)}
-                // console.log(item,num)
-            return item
-        },
-        //取两坐标点直线
-        pathLine:function(c1,c2){
-          var c1 = c1,    //坐标起点 x y
-              c2 = c2,    //坐标终点 x y
-              width = '',   //斜线盒子width值
-              height = '',  //斜线盒子height值
-              top = '',   //斜线盒子top值
-              left = '',    //斜线盒子left值
-              border = '',
-              // origin = c1.o,
-              px = 'px;',
-              path = ''
-
-          //取两个x坐标间距离
-          width = 'width:' + Math.abs(c1.x - c2.x) + px;
-          //取两个yx坐标间距离
-          height = 'height:' + Math.abs(c1.y - c2.y) + px;
-          //取两个y坐标最小值
-          top = 'top:' + Math.min(c1.y,c2.y) + px;
-          //取两个x坐标最小值
-          left = 'left:' + Math.min(c1.x,c2.x) + px;
-          //缩放展开所需要的偏移量
-          // origin = 'transform-origin:' + origin + ';';
-
-          //判断宽度为0或高度为0 设置border为1px实线
-          border = (Math.abs(c1.x - c2.x) < 1) ? 'border:1px solid currentColor;' : (Math.abs(c1.y - c2.y) < 1) ? 'border:1px solid currentColor;' : '';
-
-          // console.log(c1.l,(c1.x>c2.x && c1.y>c2.y))
-          
-
-          // console.log(c1.x,c2.x)
-          //组成style
-          path = top + left + width + height + border
-          return path
-        },
-        cssCircle:function(num,x,y,r){
-            var x = x,
-                y = y,
-                r = r,
-                a = num,
-                aa = a*Math.PI/180,
-                lx = x,
-                ly = y,
-                xar = 0,
-                laf = (a > 180) ? 1 : 0,
-                sf = 1,
-                show = show,
-                sinLx = (lx+(Math.sin(aa)*r))+'px ',    //角弧度终点x
-                cosLy = (ly-(Math.cos(aa)*r))+'px ',    //角弧度终点y
-
-                center = '50% 50%, ',                     //画布中心点
-                top = '50% 0, ',                          //画布top点
-                topRight = '100% 0, ',                    //画布topRight点
-                right = '100% 50%, ',                     //画布right点
-                rightBottom = '100% 100%, ',              //画布rightBottom点
-                bottom = '50% 100%, ',                    //画布bottom点
-                bottomLeft = '0 100%, ',                  //画布bottomLeft点
-                left = '0 50%, ',                         //画布left点
-                leftTop = '0 0, ',                        //画布leftTop点
-
-
-                dd = center + top,      //图形起始点
-
-                dd_90 = dd + topRight, //小于90度图形起始点
-                dd_180 = dd + topRight + right + rightBottom, //大于90度小于180图形起始点
-                dd_270 = dd + topRight + right + rightBottom + bottom + bottomLeft, //大于180度小于270图形起始点
-                dd_360 = dd + topRight + right + rightBottom + bottom + bottomLeft + left + leftTop; //大于270度小于360图形起始点
-
-                
-                if(a>270){
-                    dd = dd_360;
-                }else if(a>180){
-                    dd = dd_270;
-                }else if(a>90){
-                    dd = dd_180;
-                }else{
-                    dd = dd_90;
-                }
-
-                dd += sinLx + cosLy
-                dd = 'clip-path: polygon('+dd+');'
-
-                // console.log(dd)
-            return dd
+	name: 'Myyh',
+	data () {
+    return {
+            start:false,
+            seconds:0,
+            times:[0,0,0],
+            numTimes:[0,0,0],
+            secondAn:0,
+            showTimes:true
         }
+	},
+	computed: {
+        //能力值坐标点
+        aaa(){
+          let items = this.lineData(this.dItems,this.pi(this.round,this.piN),this.cx,this.cy,this.r);
+          return items
+        },
+        second(){
+            var second = 'rotate('+ ((this.numTimes[2].time * 6) || 0) +')'
+            return second
+        },
+        minute(){
+            var second = 'rotate('+ ((this.numTimes[1].time * 6) + (this.numTimes[2].time * 6) / 60 || 0) +')'
+            return second
+        },
+        hour(){
+            var second = 'rotate('+ ((this.numTimes[0].time * 30) + (this.numTimes[1].time * 6) / 12 || 0) +')'
+            return second
+        }
+	},
+    watch:{
+        numTimes(){}
+    },
+  mounted(){
+    // this.start = true;
+    this.timer();
+    this.lengthPath('list');
+  },
+	methods: {
+    lengthPath(id){
+      var id = id;
+      var path = this.$refs[id].children;
+      for (var i = 0; i < path.length; i++)
+      {
+        var length = path[i].getTotalLength();
+        path[i].style = 'stroke-dasharray: '+length+';stroke-dashoffset: '+length+';';
+
+      }
+    },
+    degree(n,d,num){
+        var length = this.strokeDasharray(n);
+        var degreeWidth = d;
+        var num = num;
+        var style = 'stroke-dasharray:'+degreeWidth+' '+((length/num) - degreeWidth);
+        return style
+
+    },
+    strokeDasharray(n){
+        var pi = 3.1415926;
+        var length = pi * n * 2;
+
+        return length
+    },
+    timer(){
+        var self = this;
+        var tt = new Date();
+        this.seconds = parseInt(tt.getSeconds())*6+180;
+        var t = setInterval(function(){
+            var d = new Date();
+            self.times = [d.getHours(),d.getMinutes(),d.getSeconds()];
+            self.numTimes = [
+                {time:d.getHours()},{time:d.getMinutes()},{time:d.getSeconds()}
+            ]
+        }, 1000);
+        
     }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .paluosi{
-      width:100%;
-      height:100%;
-    }
-    .paluosi>div{
-      width:100%;
-      height:50%;
-      background: lime;
-      clip-path:polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-    }
-    .paluosi:before{
-      content: '';
-      position: absolute;
-      width:100%;
-      height:100%;
-      top:0;
-      left:0;
-      background: red;
-      clip-path:polygon(50% 50%, 50% 100%, 0 75%, 0 25%);
-    }
-    .paluosi:after{
-      content: '';
-      position: absolute;
-      width:100%;
-      height:100%;
-      top:0;
-      left:0;
-      background: yellow;
-      clip-path:polygon(50% 50%, 50% 100%, 100% 75%, 100% 25%);
-    }
-    .line{
-      background: red;
-      height:100px;
-      width: 250px;
-    }
-    .line:before{
-      content: '';
-      position: absolute;
-      top:1px;
-      left:0;
-      background: rgba(255,255,255,.9);
-      height:100%;
-      width: 100%;
-    }
-   	.linearGradientLeftTop{
-        position: absolute;
-        background: linear-gradient(to left top, transparent calc(50% - 0.5px), currentColor, transparent calc(50% + 0.5px));
-    }
-    .linearGradientTopRight{
-        position: absolute;
-        background: linear-gradient(to top right, transparent calc(50% - 0.5px), currentColor, transparent calc(50% + 0.5px));
-    }
-    .polygonLine .linearGradientLeftTop{
-        position: absolute;
-        background: linear-gradient(to left top, transparent calc(50% - 2px), currentColor, transparent calc(50% + 2px));
-    }
-    .polygonLine .linearGradientTopRight{
-        position: absolute;
-        background: linear-gradient(to top right, transparent calc(50% - 2px), currentColor, transparent calc(50% + 2px));
-    }
-    .polygonLine .dian:before{
-      content: '';
-      position: absolute;
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background: currentColor;
-      left:-5px;
-      top:-5px;
-      border:1px solid #fff;
-    }
-    .aa{
-    	outline-left:1px solid currentColor;
-    }
-    .transition_an{
-      transition:-webkit-clip-path 0.5s linear;
-    }
-    .an_show{
-      transition-property:opacity;
-      transition-duration:0.2s;
-      transition-timing-function:linear;
-      transition-delay: 0.5s;
-      display:block;
-      opacity: 1 !important;
-    }
-    .name span{
-      top:-10px;
-      left:-25px;
-      width: 50px;
-      height:20px;
-      position: absolute;
-      display:block;
-    }
+.fonts{
+  stroke: white;
+  stroke-width: 1px;
+  /*stroke-dasharray: 130px;*/
+  /*stroke-dashoffset: 130px;*/
+  fill-opacity: 0;
+
+}
+.fonts path{
+  animation: fonts_an 2s linear alternate forwards;
+
+}
+.fonts.an path{
+  animation: fonts_an 2s linear alternate forwards;
+}
+.bg-fonts {
+  fill-opacity:0;
+  animation: fontsBg_an 1s 2.5s linear alternate forwards;
+}
+@keyframes fonts_an
+{ 
+/*0%  { stroke-dashoffset: 130px; } */
+70% { 
+      stroke-dashoffset: 0;
+      fill-opacity:0;
+      stroke-width: 1px;
+  }
+100% { 
+      stroke-dashoffset: 0; 
+      fill-opacity:1;
+      stroke-width: 0;
+  }
+}
+@keyframes fontsBg_an
+{ 
+from { fill-opacity:0 }
+to { fill-opacity:1 }
+}
     
 </style>
