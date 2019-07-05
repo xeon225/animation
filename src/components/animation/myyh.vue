@@ -6,21 +6,30 @@
                 <!-- 时钟表盘 -->
                 <circle fill="white" cx="50" stroke-width="3" cy="50" r="50" :style="'stroke-dasharray:'+strokeDasharray(50)"/>
                 <!-- 时钟表盘 -->
-                <circle fill="none" cx="50" stroke-width="1" cy="50" r="50" stroke="white" transform="translate(0, 100) rotate(-90)" :stroke-dasharray="0 +' '+ strokeDasharray(50)">
-                    <animate attributeName="stroke-dasharray" :to="strokeDasharray(50)+' '+strokeDasharray(50)" dur="1s" repeatCount="indefinite" />
-                </circle>
+<!--                 <circle fill="none" cx="50" stroke-width="1" cy="50" r="50" stroke="white" stroke-dashoffset="0" transform="translate(0, 100) rotate(-90)" :stroke-dasharray="strokeDasharray(50) +' '+ strokeDasharray(50)">
+                    <animate v-if="showTimes" attributeName="stroke-dasharray" :to="strokeDasharray(50)+','+strokeDasharray(50)" dur="3s" repeatCount="freeze" />
+                    <animate v-if="showTimes" attributeName="stroke-dashoffset" :to="-strokeDasharray(50)" begin="1s" dur="1s" repeatCount="freeze" />
+                </circle> -->
                 <!-- 刻度小 -->
                 <circle fill="white" cx="50" cy="50" r="45" stroke-width="7" :style="degree(45,1,60)"/>
+                
                 <!-- 刻度大 -->
-                <circle fill="white" cx="50" cy="50" r="45" stroke-width="7" style="stroke-dashoffset: 1;" :style="degree(45,3,12)"/>
+                <circle fill="none" cx="50" cy="50" r="45" stroke-width="7" style="stroke-dashoffset: 1;" :style="degree(45,3,12)"/>
+                <!-- 无指针 -->
+
+                <g transform="translate(50, 50) rotate(-90)">
+                    <!-- <circle fill="#4e2828" cx="0" cy="0" r="37" stroke-width="7" stroke="rgba(0,0,0,.5)"/> -->
+                    <circle fill="none" cx="0" cy="0" r="37" stroke-width="5" stroke-linecap="round" stroke-dashoffset="0" :style="degree(37,0,1)">
+                        <animate attributeName="stroke-dashoffset" :to="-degrees(38,0,1)" dur="60s" repeatCount="indefinite"></animate>
+                    </circle>
+
+                </g>
+                
                 <!-- 指针 -->
                 <g style="transform: translate(0.5px,0);">
-                    <g transform="translate(50, 50) rotate(180)">
-                        <!-- 秒 -->
-                        <line stroke-width="1"  stroke-linecap="round" x1="0" y1="0" x2="0" y2="45" :transform="second"/>
-                        <!-- 分 -->
+                     <g transform="translate(50, 50) rotate(180)">
+                        <!-- <line stroke-width="1"  stroke-linecap="round" x1="0" y1="0" x2="0" y2="45" :transform="second"/> -->
                         <line stroke-width="2"  stroke-linecap="round" x1="0" y1="0" x2="0" y2="35" :transform="minute"/>
-                        <!-- 时 -->
                         <line stroke-width="3"  stroke-linecap="round" x1="0" y1="0" x2="0" y2="25" :transform="hour"/>
                     </g>
                     <circle fill="black" cx="50" cy="50" r="2" stroke-width="1"/>
@@ -164,7 +173,7 @@ export default {
             times:[0,0,0],
             numTimes:[0,0,0],
             secondAn:0,
-            showTimes:true
+            showTimes:false
         }
 	},
 	computed: {
@@ -211,7 +220,13 @@ export default {
         var num = num;
         var style = 'stroke-dasharray:'+degreeWidth+' '+((length/num) - degreeWidth);
         return style
-
+    },
+    degrees(n,d,num){
+        var length = this.strokeDasharray(n);
+        var degreeWidth = d;
+        var num = num;
+        var style = (length/num) - degreeWidth;
+        return style
     },
     strokeDasharray(n){
         var pi = 3.1415926;
@@ -229,6 +244,7 @@ export default {
             self.numTimes = [
                 {time:d.getHours()},{time:d.getMinutes()},{time:d.getSeconds()}
             ]
+            self.showTimes = true;
         }, 1000);
         
     }
