@@ -8,6 +8,7 @@
       <div><a href="/animation/lineChart.html">折线图</a></div>
       <div><a href="/animation/antinomy.html">悖论空间</a></div>
       <div><a href="/animation/myyh.html">马姨呀嘿</a></div>
+      <div><a href="/animation/myyhPath.html">马姨呀嘿Path</a></div>
     </div>
   </div>
 </template>

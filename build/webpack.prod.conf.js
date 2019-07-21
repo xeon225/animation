@@ -174,6 +174,22 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunks: ['manifest', 'vendor', 'myyh']
     }),
 
+    // 马姨呀嘿Path
+    new HtmlWebpackPlugin({
+      filename: process.env.NODE_ENV === 'testing'
+        ? '/animation/myyhPath.html'
+        : config.build.myyhPath,
+      template: './tpl/animation/myyhPath.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
+      chunksSortMode: 'dependency',
+      chunks: ['manifest', 'vendor', 'myyhPath']
+    }),
+
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting

@@ -28,7 +28,8 @@ module.exports = {
     pieChart:'./src/js/animation/pieChart.js', //饼图
     lineChart:'./src/js/animation/lineChart.js', //折线图
     antinomy:'./src/js/animation/antinomy.js', //悖论空间
-    myyh:'./src/js/animation/myyh.js' //马姨呀嘿
+    myyh:'./src/js/animation/myyh.js', //马姨呀嘿
+    myyhPath:'./src/js/animation/myyhPath.js' //马姨呀嘿Path
   },
   output: {
     path: config.build.assetsRoot,

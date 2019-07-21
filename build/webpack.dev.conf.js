@@ -100,6 +100,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks:['myyh']
     }),
+    // 马姨呀嘿Path
+    new HtmlWebpackPlugin({
+      filename: 'animation/myyhPath.html',
+      template: 'tpl/animation/myyhPath.html',
+      inject: true,
+      chunks:['myyhPath']
+    }),
     
     // copy custom static assets
     new CopyWebpackPlugin([
