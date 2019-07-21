@@ -1,6 +1,6 @@
 <template>
   <div id="MyyhPath">
-    <div class="ps4">
+    <div class="ps4" v-if="false">
         <svg class="wire-wrapper fonts" x="0px" y="0px" viewBox="0 0 1166.8 736.9" ref="list">
 
           <!-- Controller -->
@@ -209,6 +209,74 @@
           </g>
         </svg>
     </div>
+    <div class="font">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 320 180" class="letters--effect-1" ref="font">
+        <g class="letter letter--1" style="transform-origin: 51.6126px 89.912px 0px; opacity: 1; transform: rotateZ(0deg);">
+          <g class="letter__part">
+            <path class="letter__layer" d="M41.5,88.4c0,0,26.8,0.9,32.9-9.9c8.4-15-10.8-31.6-46.7-25.2" style="stroke-dashoffset: 0px; stroke-dasharray: 100.974; opacity: 1;"></path>
+            <path class="letter__layer" d="M41.5,88.4c0,0,26.8,0.9,32.9-9.9c8.4-15-10.8-31.6-46.7-25.2" style="stroke-dashoffset: 0px; stroke-dasharray: 100.974; opacity: 1;"></path>
+            <path class="letter__layer" d="M41.5,88.4c0,0,26.8,0.9,32.9-9.9c8.4-15-10.8-31.6-46.7-25.2" style="stroke-dashoffset: 0px; stroke-dasharray: 100.974; opacity: 1;"></path>
+          </g>
+          <g class="letter__part">
+            <path class="letter__layer" d="M39.2,89.6c45.8-10.3,59.4,49.7-13,36.4" style="stroke-dashoffset: 0px; stroke-dasharray: 108.655; opacity: 1;"></path>
+            <path class="letter__layer" d="M39.2,89.6c45.8-10.3,59.4,49.7-13,36.4" style="stroke-dashoffset: 0px; stroke-dasharray: 108.655; opacity: 1;"></path>
+            <path class="letter__layer" d="M39.2,89.6c45.8-10.3,59.4,49.7-13,36.4" style="stroke-dashoffset: 0px; stroke-dasharray: 108.655; opacity: 1;"></path>
+          </g>
+          <g class="letter__part">
+            <path class="letter__layer" d="M40.5,63.4v54.9" style="stroke-dashoffset: 0px; stroke-dasharray: 54.9; opacity: 1;"></path>
+            <path class="letter__layer" d="M40.5,63.4v54.9" style="stroke-dashoffset: 0px; stroke-dasharray: 54.9; opacity: 1;"></path>
+            <path class="letter__layer" d="M40.5,63.4v54.9" style="stroke-dashoffset: 0px; stroke-dasharray: 54.9; opacity: 1;"></path>
+          </g>
+        </g>
+        <g class="letter letter--2" style="transform-origin: 106.65px 100.195px 0px; opacity: 1; transform: rotateZ(0deg);">
+          <g class="letter__part">
+            <path class="letter__layer" d="M91,97.4h31.3c-12.9-65.4-51.4,62.3,0,13.1" style="stroke-dashoffset: 0px; stroke-dasharray: 130.012; opacity: 1;"></path>
+            <path class="letter__layer" d="M91,97.4h31.3c-12.9-65.4-51.4,62.3,0,13.1" style="stroke-dashoffset: 0px; stroke-dasharray: 130.012; opacity: 1;"></path>
+            <path class="letter__layer" d="M91,97.4h31.3c-12.9-65.4-51.4,62.3,0,13.1" style="stroke-dashoffset: 0px; stroke-dasharray: 130.012; opacity: 1;"></path>
+          </g>
+        </g>
+        <g class="letter letter--3" style="transform-origin: 140.6px 94.25px 0px; opacity: 1; transform: rotateZ(0deg);">
+          <g class="letter__part">
+            <path class="letter__layer" d="M140.6,63.4v61.7" style="stroke-dashoffset: 0px; stroke-dasharray: 61.7; opacity: 1;"></path>
+            <path class="letter__layer" d="M140.6,63.4v61.7" style="stroke-dashoffset: 0px; stroke-dasharray: 61.7; opacity: 1;"></path>
+            <path class="letter__layer" d="M140.6,63.4v61.7" style="stroke-dashoffset: 0px; stroke-dasharray: 61.7; opacity: 1;"></path>
+          </g>
+        </g>
+        <g class="letter letter--4" style="transform-origin: 164.65px 93.6px 0px; opacity: 1; transform: rotateZ(0deg);">
+          <g class="letter__part">
+            <path class="letter__layer" d="M161.5,72.1l6.3-10" style="stroke-dashoffset: 0px; stroke-dasharray: 11.8191; opacity: 1;"></path>
+            <path class="letter__layer" d="M161.5,72.1l6.3-10" style="stroke-dashoffset: 0px; stroke-dasharray: 11.8191; opacity: 1;"></path>
+            <path class="letter__layer" d="M161.5,72.1l6.3-10" style="stroke-dashoffset: 0px; stroke-dasharray: 11.8191; opacity: 1;"></path>
+          </g>
+          <g class="letter__part">
+            <path class="letter__layer" d="M161.5,81.7v43.4" style="stroke-dashoffset: 0px; stroke-dasharray: 43.4; opacity: 1;"></path>
+            <path class="letter__layer" d="M161.5,81.7v43.4" style="stroke-dashoffset: 0px; stroke-dasharray: 43.4; opacity: 1;"></path>
+            <path class="letter__layer" d="M161.5,81.7v43.4" style="stroke-dashoffset: 0px; stroke-dasharray: 43.4; opacity: 1;"></path>
+          </g>
+        </g>
+        <g class="letter letter--5" style="transform-origin: 192.95px 100.195px 0px; opacity: 1; transform: rotateZ(0deg);">
+          <g class="letter__part">
+            <path class="letter__layer" d="M177.3,97.4h31.3c-12.9-65.4-51.4,62.3,0,13.1" style="stroke-dashoffset: 0px; stroke-dasharray: 130.012; opacity: 1;"></path>
+            <path class="letter__layer" d="M177.3,97.4h31.3c-12.9-65.4-51.4,62.3,0,13.1" style="stroke-dashoffset: 0px; stroke-dasharray: 130.012; opacity: 1;"></path>
+            <path class="letter__layer" d="M177.3,97.4h31.3c-12.9-65.4-51.4,62.3,0,13.1" style="stroke-dashoffset: 0px; stroke-dasharray: 130.012; opacity: 1;"></path>
+          </g>
+        </g>
+        <g class="letter letter--6" style="transform-origin: 237.85px 102.9px 0px; opacity: 1; transform: rotateZ(0deg);">
+          <g class="letter__part">
+            <path class="letter__layer" d="M222.2,81.7l15.8,42.4l15.5-42.4" style="stroke-dashoffset: 0px; stroke-dasharray: 90.3925; opacity: 1;"></path>
+            <path class="letter__layer" d="M222.2,81.7l15.8,42.4l15.5-42.4" style="stroke-dashoffset: 0px; stroke-dasharray: 90.3925; opacity: 1;"></path>
+            <path class="letter__layer" d="M222.2,81.7l15.8,42.4l15.5-42.4" style="stroke-dashoffset: 0px; stroke-dasharray: 90.3925; opacity: 1;"></path>
+          </g>
+        </g>
+        <g class="letter letter--7" style="transform-origin: 278.05px 100.195px 0px; opacity: 1; transform: rotateZ(0deg);">
+          <g class="letter__part">
+            <path class="letter__layer" d="M293.7,110.5c-51.4,49.2-12.9-78.5,0-13.1h-31.3" style="stroke-dashoffset: 0px; stroke-dasharray: 130.012; opacity: 1;"></path>
+            <path class="letter__layer" d="M293.7,110.5c-51.4,49.2-12.9-78.5,0-13.1h-31.3" style="stroke-dashoffset: 0px; stroke-dasharray: 130.012; opacity: 1;"></path>
+            <path class="letter__layer" d="M293.7,110.5c-51.4,49.2-12.9-78.5,0-13.1h-31.3" style="stroke-dashoffset: 0px; stroke-dasharray: 130.012; opacity: 1;"></path>
+          </g>
+        </g>
+      </svg>
+    </div>
   </div>
 </template>
 
@@ -239,7 +307,8 @@ export default {
 
     },
   mounted(){
-    this.lengthPath('list');
+    // this.lengthPath('list');
+    this.lengthPath('font');
   },
 	methods: {
     lengthPath(id){
@@ -345,6 +414,99 @@ export default {
       stroke-dashoffset: 0;
   }
 }
-
-    
+.letter__part{
+  fill: none;
+  stroke-miterlimit: 3;
+  stroke-linecap: butt;
+  stroke-linejoin: bevel;
+}
+.letters--effect-4 .letter__part .letter__layer:nth-of-type(1) {
+  stroke: #00966c;
+  stroke-width: 10px;
+  animation: fonts_an 1s linear alternate forwards;
+}
+.letters--effect-4 .letter__part .letter__layer:nth-of-type(2) {
+  stroke: #27272d;
+  stroke-width: 4px;
+  animation: fonts_an 0.75s 0.5s ease-out alternate forwards;
+}
+.letters--effect-4 .letter__part .letter__layer:nth-of-type(3) {
+  stroke: #fcec9b;
+  stroke-width: 1px;
+  animation: fonts_an 0.5s 1s ease-out alternate forwards;
+}
+.letters--effect-3 .letter__part .letter__layer:nth-of-type(1) {
+  -webkit-transform: translate3d(-2px, -2px, 0);
+  transform: translate3d(-2px, -2px, 0);
+  stroke: #dddde6;
+  stroke-width: 10px;
+  animation: fonts_an 1s linear alternate forwards;
+}
+.letters--effect-3 .letter__part .letter__layer:nth-of-type(2) {
+  stroke: #eca80e;
+  stroke-width: 6px;
+  animation: fonts_an 0.75s 0.75s ease-out alternate forwards;
+}
+.letters--effect-3 .letter__part .letter__layer:nth-of-type(3) {
+  stroke: #607d8b;
+  stroke-width: 8px;
+  animation: fonts_an 0.75s 1s ease-out alternate forwards;
+}  
+.letters--effect-2 .letter__part .letter__layer:nth-of-type(1) {
+  stroke: #4caf50;
+  stroke-width: 1px;
+  animation: fonts_an 1s linear alternate forwards;
+}
+.letters--effect-2 .letter__part .letter__layer:nth-of-type(2) {
+  stroke: #ffeb3b;
+  stroke-width: 4px;
+  animation: fonts_an 1s 0.25s ease-out alternate forwards;
+}
+.letters--effect-2 .letter__part .letter__layer:nth-of-type(3) {
+  stroke: #e6437b;
+  stroke-width: 10px;
+  animation: fonts_an 1s 0.5s ease-out alternate forwards;
+}
+.letters--effect-1 .letter__part .letter__layer:nth-of-type(1) {
+  stroke: #f84242;
+  stroke-width: 10px;
+  stroke-dasharray: 10 20 !important;
+  stroke-dashoffset: 0 !important;
+  animation: fonts_an_1_1 1s linear infinite;
+}
+.letters--effect-1 .letter__part .letter__layer:nth-of-type(2) {
+  stroke: #3758a7;
+  stroke-width: 10px;
+  stroke-dasharray: 10 20 !important;
+  stroke-dashoffset: 0 !important;
+  animation: fonts_an_1_2 1s linear infinite;
+}
+.letters--effect-1 .letter__part .letter__layer:nth-of-type(3) {
+  stroke: #dea521;
+  stroke-width: 10px;
+  stroke-dasharray: 10 20 !important;
+  stroke-dashoffset: 0 !important;
+  animation: fonts_an_1_3 1s linear infinite;
+}
+@keyframes fonts_an_1_1
+{ 
+0%  { stroke-dashoffset: 0 } 
+100% { 
+      stroke-dashoffset: 50;
+  }
+}
+@keyframes fonts_an_1_2
+{ 
+0%  { stroke-dashoffset: -10 } 
+100% { 
+      stroke-dashoffset: 40;
+  }
+}
+@keyframes fonts_an_1_3
+{ 
+0%  { stroke-dashoffset: -20 } 
+100% { 
+      stroke-dashoffset: 30;
+  }
+}
 </style>
