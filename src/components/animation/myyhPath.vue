@@ -1,10 +1,10 @@
 <template>
   <div id="MyyhPath">
     <div class="ps4">
-        <svg class="wire-wrapper" x="0px" y="0px" viewBox="0 0 1166.8 736.9">
+        <svg class="wire-wrapper fonts" x="0px" y="0px" viewBox="0 0 1166.8 736.9" ref="list">
 
           <!-- Controller -->
-          <g class="fonts" ref="list">
+          <g class="">
             <!-- Outline -->
             <g>
               <path d="M256.7,513.1l53.9-13.9c0,0,0.8-16,9.8-23.8" style="stroke-dasharray: 83, 83; stroke-dashoffset: 0;"></path>
@@ -24,8 +24,8 @@
 
             <!-- Square Screen Thing (idk what this is) -->
             <g>
-              <line x1="306.3" y1="584.2" x2="417.2" y2="556.4"></line>
-              <line x1="338.3" y1="581.9" x2="420" y2="561.3"></line>
+              <path d="M417.2,556.4L306.3,584.2"></path>
+              <path d="M420,561.3L338.3,581.9"></path>
               <path d="M392.4,523.8c0,0-6.4-9.3-17.4-4.6s-129.7,33-129.7,33s-11.6,5.2-4.6,13.3c6.9,8.1,22,30.7,22,30.7
                     s5.8,4.6,7,15.1c1.2,10.4,1.5,17.2,3.5,22.6c1,2.9,3.5,6.4,11,5.2c7.5-1.2,134.9-36.5,134.9-36.5s8.8-3.2,8.7-16.2
                     c0-4.9-4.7-18-7.7-25.1C416.4,553.1,392.4,523.8,392.4,523.8z" style="stroke-dasharray: 494, 494; stroke-dashoffset: 0;"></path>
@@ -33,7 +33,7 @@
 
             <!-- Right Thumbstick -->
             <g>
-              <ellipse cx="214" cy="498.1" rx="18.5" ry="11.4"></ellipse>
+              <path d="M194.5 498.1a18.5 11.4 0 1 0 37 0a18.5 11.4 0 1 0 -37 0z"></path>
               <path d="M242,498.7c0,9-12.5,16.2-28,16.2c-14.2,0-26-6.1-27.8-14.1c-0.2-0.7-0.2-1.4-0.2-2.1c0-9,12.5-16.2,28-16.2
                     S242,489.8,242,498.7z" style="stroke-dasharray: 142, 142; stroke-dashoffset: 0;"></path>
               <path d="M186,496.9c-1.9,5-0.5,13.2,4.4,18.1c5.3,5.2,12.2,6.8,23.6,6.8c13.9,0,20.1-2.4,24.1-7.2
@@ -49,7 +49,7 @@
               <path d="M335.2,458.7c-1.9,5-0.5,13.2,4.4,18.1c5.3,5.2,12.2,6.8,23.5,6.8c13.9,0,20.1-2.4,24.1-7.2
                     c2.2-2.7,5.8-11.4,3.9-16.4" style="stroke-dasharray: 89, 89; stroke-dashoffset: 0;"></path>
               <g>
-                <ellipse cx="363.2" cy="459.9" rx="18.5" ry="11.4"></ellipse>
+                <path d="M344.7 459.9a18.5 11.4 0 1 0 37 0a18.5 11.4 0 1 0 -37 0z"></path>
                 <path d="M391.2,460.5c0,9-12.5,16.2-28,16.2c-14.2,0-26-6.1-27.8-14.1c-0.2-0.7-0.2-1.4-0.2-2.1
                       c0-9,12.5-16.2,28-16.2C378.7,444.3,391.2,451.5,391.2,460.5z" style="stroke-dasharray: 142, 142; stroke-dashoffset: 0;"></path>
                 <path d="M351.8,482.9v5.6c0,0,6.6,6.4,20.3,1.2" style="stroke-dasharray: 27, 27; stroke-dashoffset: 0;"></path>
@@ -117,18 +117,18 @@
               </g>
             </g>
             <!-- PS Button -->
-            <ellipse cx="287.5" cy="513.8" rx="13.5" ry="5.4"></ellipse>
+            <path d="M274 513.8a13.5 5.4 0 1 0 27 0a13.5 5.4 0 1 0 -27 0z"></path>
             <!-- Speaker Dots -->
             <g>
-              <ellipse cx="288.8" cy="533.1" rx="2" ry="1.5"></ellipse>
-              <ellipse cx="296.8" cy="531.5" rx="2" ry="1.5"></ellipse>
-              <ellipse cx="291.4" cy="528" rx="2" ry="1.4"></ellipse>
-              <ellipse cx="305.5" cy="529.9" rx="2" ry="1.5"></ellipse>
-              <ellipse cx="299" cy="526.2" rx="2" ry="1.4"></ellipse>
-              <ellipse cx="313.3" cy="527.8" rx="2" ry="1.5"></ellipse>
-              <ellipse cx="306.3" cy="524.5" rx="2" ry="1.4"></ellipse>
-              <ellipse cx="320.8" cy="525" rx="2" ry="1.5"></ellipse>
-              <ellipse cx="313.9" cy="522.5" rx="2" ry="1.4"></ellipse>
+              <path d="M286.8 533.1a2 1.5 0 1 0 4 0a2 1.5 0 1 0 -4 0z"></path>
+              <path d="M294.8 531.5a2 1.5 0 1 0 4 0a2 1.5 0 1 0 -4 0z"></path>
+              <path d="M289.4 528a2 1.4 0 1 0 4 0a2 1.4 0 1 0 -4 0z"></path>
+              <path d="M303.5 529.9a2 1.5 0 1 0 4 0a2 1.5 0 1 0 -4 0z"></path>
+              <path d="M297 526.2a2 1.4 0 1 0 4 0a2 1.4 0 1 0 -4 0z"></path>
+              <path d="M311.3 527.8a2 1.5 0 1 0 4 0a2 1.5 0 1 0 -4 0z"></path>
+              <path d="M304.3 524.5a2 1.4 0 1 0 4 0a2 1.4 0 1 0 -4 0z"></path>
+              <path d="M318.8 525a2 1.5 0 1 0 4 0a2 1.5 0 1 0 -4 0z"></path>
+              <path d="M311.9 522.5a2 1.4 0 1 0 4 0a2 1.4 0 1 0 -4 0z"></path>
             </g>
 
             <!-- Face Buttons -->
@@ -139,28 +139,28 @@
 
               <!-- Triangle -->
               <g>
-                <ellipse cx="188.5" cy="601.9" rx="16.9" ry="11.5"></ellipse>
+                <path d="M171.6 601.9a16.9 11.5 0 1 0 33.8 0a16.9 11.5 0 1 0 -33.8 0z"></path>
                 <path d="M204.8,605c0,6.4-6.9,10.8-16.2,10.8s-16.5-5.2-16.5-11.5" style="stroke-dasharray: 44, 44; stroke-dashoffset: 0;"></path>
                 <path d="M177.7,600.5L191.7 594.1 194.8 607.6 z" style="stroke-dasharray: 48, 48; stroke-dashoffset: 0;"></path>
               </g>
               <!-- Square -->
               <g>
-                <ellipse cx="206" cy="571.5" rx="16.9" ry="11.5"></ellipse>
+                <path d="M189.1 571.5a16.9 11.5 0 1 0 33.8 0a16.9 11.5 0 1 0 -33.8 0z"></path>
                 <path d="M222.2,574.7c0,6.4-6.9,10.8-16.2,10.8c-9.3,0-16.5-5.2-16.5-11.5" style="stroke-dasharray: 44, 44; stroke-dashoffset: 0;"></path>
                 <path d="M206.8,563.9L194.2 570.3 204.8 578.6 218.2 571.6 z" style="stroke-dasharray: 57, 57; stroke-dashoffset: 0;"></path>
               </g>
               <!-- X -->
               <g>
-                <ellipse cx="155.4" cy="558.8" rx="16.9" ry="11.5"></ellipse>
+                <path d="M138.5 558.8a16.9 11.5 0 1 0 33.8 0a16.9 11.5 0 1 0 -33.8 0z"></path>
                 <path d="M171.7,561.9c0,6.4-6.9,10.8-16.2,10.8c-9.3,0-16.5-5.2-16.5-11.5" style="stroke-dasharray: 44, 44; stroke-dashoffset: 0;"></path>
-                <line x1="154.1" y1="565.5" x2="156.5" y2="551.7"></line>
-                <line x1="165.1" y1="558.8" x2="146.1" y2="556.4"></line>
+                <path d="M154.1 565.5L156.5 551.7"></path>
+                <path d="M165.1 558.8L146.1 556.4"></path>
               </g>
               <!-- Circle -->
               <g>
-                <ellipse cx="136.7" cy="589.1" rx="16.9" ry="11.5"></ellipse>
+                <path d="M119.79999999999998 589.1a16.9 11.5 0 1 0 33.8 0a16.9 11.5 0 1 0 -33.8 0z"></path>
                 <path d="M152.9,592.3c0,6.4-6.9,10.8-16.2,10.8c-9.3,0-16.5-5.2-16.5-11.5" style="stroke-dasharray: 44, 44; stroke-dashoffset: 0;"></path>
-                <ellipse cx="136.3" cy="588.6" rx="9" ry="6.6"></ellipse>
+                <path d="M127.30000000000001 588.6a9 6.6 0 1 0 18 0a9 6.6 0 1 0 -18 0z"></path>
               </g>
             </g>
           </g>
@@ -180,24 +180,24 @@
               <path d="M547.3,522.3L712.7 569.4 1116.7 295.5 1134.7 227.4 1108.9 222.7 " style="stroke-dasharray: 757, 757; stroke-dashoffset: 0;"></path>
               <path d="M90,286.1L49.4 308.7 29.4 378 277.4 447.4 286.1 440.8 284 447.4 311.3 455.1 " style="stroke-dasharray: 423, 423; stroke-dashoffset: 0;"></path>
               <path d="M49.4,308.7L734.7 494.7 1134.7 227.4 " style="stroke-dasharray: 1192, 1192; stroke-dashoffset: 0;"></path>
-              <line x1="277.4" y1="447.4" x2="297.5" y2="376.1"></line>
-              <line x1="284" y1="447.4" x2="305.6" y2="378.5"></line>
+              <path d="M277.4 447.4L297.5 376.1"></path>
+              <path d="M284 447.4L305.6 378.5"></path>
             </g>
 
             <!-- Middle Outline -->
             <g>
               <path d="M93.2,286.1L93.2 300 427.2 390.6 " style="stroke-dasharray: 360, 360; stroke-dashoffset: 0;"></path>
               <path d="M724.4,454.3L724.4 470.7 531.4 420.9 " style="stroke-dasharray: 216, 216; stroke-dashoffset: 0;"></path>
-              <line x1="724.4" y1="470.7" x2="734.9" y2="467"></line>
+              <path d="M724.4 470.7L734.9 467"></path>
 
               <!-- Ports -->
               <g>
                 <path d="M440.4,382.4L440.4 396.1 467.9 403 467.9 389 z" style="stroke-dasharray: 85, 85; stroke-dashoffset: 0;"></path>
-                <line x1="443" y1="392.7" x2="465" y2="397.7"></line>
+                <path d="M443 392.7L465 397.7"></path>
               </g>
               <g>
                 <path d="M499.3,398.5L499.3 412.2 526.8 419.2 526.8 405.2 z" style="stroke-dasharray: 85, 85; stroke-dashoffset: 0;"></path>
-                <line x1="502" y1="408.8" x2="524" y2="413.8"></line>
+                <path d="M502 408.8L524 413.8"></path>
               </g>
             </g>
             <!-- PS4 Logo -->
@@ -246,17 +246,13 @@ export default {
         
 
       var id = id;
-      var path = this.$refs[id].children;
-      console.log(path)
+      var path = this.$refs[id].getElementsByTagName('path');
       for (var i = 0; i < path.length; i++)
       {
         var length = path[i].getTotalLength();
         path[i].style = 'stroke-dasharray: '+length+';stroke-dashoffset: '+length+';';
 
       }
-
-
-
     },
     degree(n,d,num){
         var length = this.strokeDasharray(n);
@@ -264,6 +260,59 @@ export default {
         var num = num;
         var style = 'stroke-dasharray:'+degreeWidth+' '+((length/num) - degreeWidth);
         return style
+    },
+    rect2path(x, y, width, height, rx, ry) { 
+      /* * rx 和 ry 的规则是： * 1. 如果其中一个设置为 0 则圆角不生效 * 2. 如果有一个没有设置则取值为另一个 */ 
+      var rx = rx || ry || 0;
+      var ry = ry || rx || 0; 
+      //非数值单位计算，如当宽度像100%则移除 
+      if (isNaN(x - y + width - height + rx - ry)) return; 
+        rx = rx > width / 2 ? width / 2 : rx; 
+        ry = ry > height / 2 ? height / 2 : ry; 
+        //如果其中一个设置为 0 则圆角不生效 
+        if(0 == rx || 0 == ry){ 
+        // var path = // 'M' + x + ' ' + y + // 'H' + (x + width) + 不推荐用绝对路径，相对路径节省代码量 // 'V' + (y + height) + // 'H' + x + // 'z'; 
+        var path = 
+        'M' + x + ' ' + y + 
+        'h' + width + 
+        'v' + height + 
+        'h' + -width + 
+        'z'; 
+      }else{ 
+        var path = 
+        'M' + x + ' ' + (y+ry) + 
+        'a' + rx + ' ' + ry + ' 0 0 1 ' + rx + ' ' + (-ry) + 
+        'h' + (width - rx - rx) + 
+        'a' + rx + ' ' + ry + ' 0 0 1 ' + rx + ' ' + ry + 
+        'v' + (height - ry -ry) + 
+        'a' + rx + ' ' + ry + ' 0 0 1 ' + (-rx) + ' ' + ry + 
+        'h' + (rx + rx -width) + 
+        'a' + rx + ' ' + ry + ' 0 0 1 ' + (-rx) + ' ' + (-ry) + 
+        'z'; 
+      } 
+      return path; 
+    },
+    ellipse2path(cx, cy, rx, ry) { 
+    //非数值单位计算，如当宽度像100%则移除 
+      if (isNaN(cx - cy + rx - ry)) return;
+      var path = 
+      'M' + (cx-rx) + ' ' + cy + 
+      'a' + rx + ' ' + ry + ' 0 1 0 ' + 2*rx + ' 0' + 
+      'a' + rx + ' ' + ry + ' 0 1 0 ' + (-2*rx) + ' 0' + 
+      'z'; 
+      // console.log('<path d="'+path+'"></path>')
+      return path; 
+    },
+    line2path(x1, y1, x2, y2) { 
+      //非数值单位计算，如当宽度像100%则移除 
+      if (isNaN(x1 - y1 + x2 - y2)) return; 
+      x1 = x1 || 0; 
+      y1 = y1 || 0; 
+      x2 = x2 || 0; 
+      y2 = y2 || 0; 
+      var path = 'M' + x1 + ' '+ y1 + 'L' + x2 + ' ' + y2;
+      console.log('<path d="'+path+'"></path>')
+      return path; 
     }
   }
 }
