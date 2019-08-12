@@ -1,13 +1,27 @@
 <template>
   <div id="MyyhPath">
-    <div class="ps4" v-if="false">
-        <svg class="wire-wrapper fonts" x="0px" y="0px" viewBox="0 0 1166.8 736.9" ref="list">
+    <div class="flex-container center text-center fs-16 paddingv20 borderb">
+        <div class="flex1" :class="pathShow && 'text-red'" @click="pathShow = true">游戏机</div>
+        <div class="flex1" :class="!pathShow && 'text-red'" @click="pathShow = false">字体</div>
+    </div>
+    <div class="flex-container center text-center fs-14 paddingv10 borderb" v-show="pathShow">
+        <div class="flex1" :class="listPs4 && 'text-red'" @click="lengthPath('listPs4'),listPs4=true,listXboxOne=false">ps4</div>
+        <div class="flex1" :class="listXboxOne && 'text-red'" @click="lengthPath('listXboxOne'),listXboxOne=true,listPs4=false">xboxOne</div>
+    </div>
+    <div class="flex-container center text-center fs-14 paddingv10 borderb" v-show="!pathShow">
+        <div class="flex1" :class="fonts_list === 1 && 'text-red'" @click="fonts_list=1">样式一</div>
+        <div class="flex1" :class="fonts_list === 2 && 'text-red'" @click="fonts_list=2">样式二</div>
+        <div class="flex1" :class="fonts_list === 3 && 'text-red'" @click="fonts_list=3">样式三</div>
+        <div class="flex1" :class="fonts_list === 4 && 'text-red'" @click="fonts_list=4">样式四</div>
+    </div>
+    <div class="ps4" v-show="pathShow && listPs4">
+        <svg class="wire-wrapper fonts" x="0px" y="0px" viewBox="0 -100 1166.8 836.9" ref="listPs4">
 
           <!-- Controller -->
           <g class="">
             <!-- Outline -->
             <g>
-              <path d="M256.7,513.1l53.9-13.9c0,0,0.8-16,9.8-23.8" style="stroke-dasharray: 83, 83; stroke-dashoffset: 0;"></path>
+              <path d="M256.7,513.1l53.9-13.9c0,0,0.8-16,9.8-23.8"></path>
               <path d="M169.3,517.9c0,0-7,12.1-8.4,24.3" style="stroke-dasharray: 26, 26; stroke-dashoffset: 0;"></path>
               <path d="M391.2,457.6c0,0,49.3-31.9,99.2,18.5" style="stroke-dasharray: 110, 110; stroke-dashoffset: 0;"></path>
               <path d="M519.9,508.4c0,0,12.9,35.6,6,71.1c-0.1,0.3-0.1,0.6-0.2,0.9l-6.2,21.1c-27,21.4-53.1,15.2-53.1,15.2" style="stroke-dasharray: 152, 152; stroke-dashoffset: 0;"></path>
@@ -209,8 +223,245 @@
           </g>
         </svg>
     </div>
-    <div class="font">
-      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 320 180" class="letters--effect-1" ref="font">
+    <div class="xboxOne" v-show="pathShow && listXboxOne">
+        <svg class="wire-wrapper fonts" x="0px" y="0px" viewBox="0 -100 1320.3 635.7" ref="listXboxOne">
+          </style>
+          <!-- Console -->
+          <g>
+            <!-- Xbox Logo -->
+              <g class="xb1-logo" style="fill: rgba(159, 159, 159, 0.04);">
+                  <path d="M762.6,142.5c5.5,6.3,8.9,15,8.9,24.6c0,6.7-1.6,12.9-4.4,18.2c0,0-9.2-28.3-16.4-33
+                          C749.3,151.5,762.6,142.5,762.6,142.5z" style="stroke-dasharray: 99, 99; stroke-dashoffset: 0;"></path>
+                  <path d="M721.2,143c-5.5,6.3-8.9,15-8.9,24.6c0,6.7,1.6,12.9,4.4,18.2c0,0,9.2-28.3,16.4-33
+                          C734.5,151.9,721.2,143,721.2,143z" style="stroke-dasharray: 99, 99; stroke-dashoffset: 0;"></path>
+                  <path d="M726.3,138c0,0,10.2-5.5,15.4-5.5c5.8,0,11.3,1.9,15.9,5.3c0,0-10.6,3.2-15,7.2L726.3,138z" style="stroke-dasharray: 68, 68; stroke-dashoffset: 0;"></path>
+                  <path d="M742.5,160.8c22,23.8,20.2,30.8,20.2,30.8c-5.4,6.3-12.9,10.1-21.1,10.1c-8.5,0-16.2-4.1-21.6-10.8
+                          c0,0-0.3-1.3,5.2-10.5C730.8,171.2,742.5,160.8,742.5,160.8z" style="stroke-dasharray: 125, 125; stroke-dashoffset: 0;"></path>
+              </g>
+            <!-- Outline -->
+            <g>
+                  <path d="M563.8,365.6L942.4 377.9 1314 352.4 1319.3 344.5 1319.3 122.3 1314 109.1 887 1 19.9 105.6 2.3 117 2.3 187.3 7.6 196.1 339.7 174.1 " style="stroke-dasharray: 2746, 2746; stroke-dashoffset: 0;"></path>
+                  <path d="M281.9,206L6.7 219.8 1 230.3 1 298 76.1 349.8 161.9 352.6 " style="stroke-dasharray: 533, 533; stroke-dashoffset: 0;"></path>
+                  <path d="M2.3 187.3L310.7 165.7"></path>
+                  <path d="M355.6,65.1L341.4 76.6 341.4 149.1 341.4 188.6 " style="stroke-dasharray: 131, 131; stroke-dashoffset: 0;"></path>
+                  <path d="M173.8 299.5L1 298"></path>
+                  <path d="M887,1L887.9 290.1 869.4 305.4 536.1 302.6 " style="stroke-dasharray: 647, 647; stroke-dashoffset: 0;"></path>
+                  <path d="M868.6,305.4L868.6 16.8 887 1 " style="stroke-dasharray: 313, 313; stroke-dashoffset: 0;"></path>
+                  <path d="M2.3 117L868.6 16.8"></path>
+                  <path d="M1 230.3L218.9 220"></path>
+                  <path d="M888.3,171L1310.7 214.9 1310.7 331.1 942.4 350.2 887.9 290.1 " style="stroke-dasharray: 991, 991; stroke-dashoffset: 0;"></path>
+                  <path d="M310.7,198.6L41.9 214 41.9 198.3 310.7 181.6 z" style="stroke-dasharray: 572, 572; stroke-dashoffset: 0;"></path>
+                  <path d="M869.4 305.4L945 377.9"></path>
+              <path d="M7.6,219.8v-23.7V219.8z" style="stroke-dasharray: 48, 48; stroke-dashoffset: 0;"></path>
+              <path d="M1309.4,325.9L945 341 894.9 287 896.3 183.5 1310 222.4 " style="stroke-dasharray: 958, 958; stroke-dashoffset: 0;"></path>
+              </g>
+            <!-- Grill -->
+              <g class="xb1-grill" ref="line">
+                  <path d="M904.6 184.9L895.9 214.5"></path>
+                    <path d="M921.3 185.8L894.9 275.1"></path>
+                    <path d="M938.4 188.1L904.6 296.2"></path>
+                    <path d="M953.8 189.5L917.3 311.1"></path>
+                    <path d="M970.1 190.3L931.4 326.1"></path>
+                    <path d="M984.5 192.5L943.3 338.4"></path>
+                    <path d="M999.5 193.4L959.1 339.3"></path>
+                    <path d="M1014.4 195.2L973.6 339.7"></path>
+                    <path d="M1028.5 196.5L988.9 339.3"></path>
+                    <path d="M1041.7 197.8L1004.3 338.4"></path>
+                    <path d="M1055.3 199.1L1018.4 337.1"></path>
+                    <path d="M1068 200.9L1031.5 337.1"></path>
+                    <path d="M1079.9 201.8L1045.6 335.7"></path>
+                    <path d="M1093 202.6L1058.3 334.9"></path>
+                    <path d="M1104.5 203.5L1071.1 335.3"></path>
+                    <path d="M1117.2 204.8L1083.4 334.4"></path>
+                    <path d="M1128.6 206.2L1096.1 333.5"></path>
+                    <path d="M1139.6 206.6L1108.9 333.5"></path>
+                    <path d="M1151 207.5L1119.4 333.5"></path>
+                    <path d="M1161.6 208.4L1132.1 332.7"></path>
+                    <path d="M1171.2 209.7L1142.2 332.7"></path>
+                    <path d="M1180.9 211L1152.3 332.7"></path>
+                    <path d="M1191 212.3L1163.8 331.4"></path>
+                    <path d="M1201.5 213.6L1173.9 330.5"></path>
+                    <path d="M1210.8 214.5L1184.4 330"></path>
+                    <path d="M1220.9 214.5L1194.5 330"></path>
+                    <path d="M1229.7 216.7L1203.7 329.6"></path>
+                    <path d="M1237.6 216.7L1213.8 330"></path>
+                    <path d="M1246.8 217.6L1221.8 330"></path>
+                    <path d="M1254.7 218L1231.9 329.6"></path>
+                    <path d="M1263.5 218.9L1240.6 329.6"></path>
+                    <path d="M1272.3 219.8L1249.4 329.6"></path>
+                    <path d="M1280.6 220.7L1258.2 328.3"></path>
+                    <path d="M1288.1 221.5L1266.1 327"></path>
+                    <path d="M1295.6 222L1274.9 327.4"></path>
+                    <path d="M1304.3 222.8L1282.8 326.5"></path>
+                    <path d="M1310.9 236.9L1290.3 327"></path>
+                    <path d="M1310.1 272.9L1297.8 327"></path>
+                    <path d="M1305.2 326.1L1310.1 305.9"></path>
+              </g>
+          </g>
+
+          <!-- Controller -->
+          <g>
+            <!-- Outline -->
+              <g>
+                  <path d="M277.1,434.1c-8,76.8-46.8,81.9-46.8,81.9c-16-1.7-18.3-20-18.3-20c-4-20,13.7-59.4,13.7-59.4
+                          c5.7-9.1,18.3-10.8,18.3-10.8h100.5c41.1,1.7,48.5,14.3,48.5,14.3c78.8,74.8,101.1,90.7,113,94.2c5.9,1.7,70.2,4,53.1-90.2
+                          c0,0-28.5-115.9-48-153.6c0,0-4-13.1-3.4-18.8c0,0-1.1-12.6-10.3-18.3c0,0-35.2-34.8-87-42.4c0,0-7.6-1.1-14.1,0
+                          c-6.5,1.1-11,5.7-16.7,12.6c-5.7,6.9-29.3,33.1-29.3,33.1s-7.2,7.6-12.2,7.6c-4.9,0-49.1,5.7-49.1,5.7s-10.7,2.7-16-6.1
+                          c-5.3-8.8-12.9-25.1-12.9-25.1s-6.1-9.1-16.7-3.4c-10.7,5.7-26.6,18.6-30.4,27.4c-3.8,8.8-3.8,8.8-3.8,8.8" style="stroke-dasharray: 1198, 1198; stroke-dashoffset: 0;"></path>
+                  <path d="M386.3 434.7L256 432.9"></path>
+                  <path d="M230.3,516c0,0-62.8-5.7-54.2-102.8c0,0,11.9-90.1,22-99.8" style="stroke-dasharray: 232, 232; stroke-dashoffset: 0;"></path>
+                  <path d="M486.3,243.9c0,0,59,161.9,61.7,211.3c0.4,8.3,9.2,54.4-26.3,78.3" style="stroke-dasharray: 308, 308; stroke-dashoffset: 0;"></path>
+                  <path d="M472.4,227.7c0,0,14.2-2.5,18,0c7.6,4.9,7,25.7,7,25.7" style="stroke-dasharray: 46, 46; stroke-dashoffset: 0;"></path>
+                  <g>
+                      <path d="M474,235.4l-2.2-10.8c0,0-1.1-2.7-3.4-3.8c-2.3-1.1-35.8-27-75.7-20.2c0,0-9.1,3.3-16.7,9.8
+                              c-3.6,3.1-12.9,4.3-12.9,4.3l-80.3,12.6c0,0-5.3,0.4-9.9-1.9c0,0-7.2-6.9-19-1.9c-11.8,4.9-25.8,16.5-25.7,22.3" style="stroke-dasharray: 277, 277; stroke-dashoffset: 0;"></path>
+                      <path d="M371,212.9c0,0,4.9,9.1,8.7,10.6" style="stroke-dasharray: 14, 14; stroke-dashoffset: 0;"></path>
+                      <path d="M276,226.6c0,0-6.7,16.1-12.4,19.2" style="stroke-dasharray: 24, 24; stroke-dashoffset: 0;"></path>
+                  </g>
+              </g>
+            <!-- Left Thumbstick -->
+              <g>
+                <path d="M204.4,317c0,0,9.1,24.8,28.9,2.6" style="stroke-dasharray: 38, 38; stroke-dashoffset: 0;"></path>
+                <path d="M216.1,295.7c-2,8.6-8.9,14.3-15.4,12.8c-6.5-1.5-10-9.7-8-18.3c2-8.6,8.9-14.3,15.4-12.8
+                          C214.6,278.9,218.2,287.1,216.1,295.7z" style="stroke-dasharray: 89, 89; stroke-dashoffset: 0;"></path>
+                    <path transform="matrix(0.9729 0.2312 -0.2312 0.9729 73.7825 -40.6364)" d="M191.9 294.5a18.4 23.3 0 1 0 36.8 0a18.4 23.3 0 1 0 -36.8 0z"></path>
+                  <path d="M218.8,273c3.5-1.2,7.1-1.4,10.7-0.6c13,3.1,20.2,19.5,16.1,36.6c-4.1,17.1-17.9,28.5-30.8,25.4
+                          c-8.9-2.1-15.1-10.5-16.8-21.1" style="stroke-dasharray: 128, 128; stroke-dashoffset: 0;"></path>
+                  <path d="M224,277.1c0,0,16.6-4,19.1,18.3" style="stroke-dasharray: 31, 31; stroke-dashoffset: 0;"></path>
+              </g>
+            <!-- Right Thumbstick -->
+              <g>
+                  <path transform="matrix(0.9729 0.2312 -0.2312 0.9729 89.914 -66.3922)" d="M313.2 350.5a15.1 19.6 0 1 0 30.2 0a15.1 19.6 0 1 0 -30.2 0z"></path>
+                  <path transform="matrix(0.9729 0.2312 -0.2312 0.9729 90.3657 -67.526)" d="M312.8 351.8a20.5 25.9 0 1 0 41 0a20.5 25.9 0 1 0 -41 0z"></path>
+                  <path d="M334.9,326.2c5.9-4.5,12.8-6.5,19.5-4.9c14.5,3.4,22.4,22.3,17.6,42.1c-4.7,19.8-20.2,33.1-34.7,29.7
+                          c-8.9-2.1-15.3-10-17.8-20.4" style="stroke-dasharray: 151, 151; stroke-dashoffset: 0;"></path>
+                  <path d="M348.5,320.6c8.3-2.7,17.5-3,25,0.8c17.7,9.1,22.4,35,10.7,57.7c-11.8,22.7-35.6,33.8-53.3,24.6
+                          c-12.9-6.7-19-22.4-16.6-39.2" style="stroke-dasharray: 201, 201; stroke-dashoffset: 0;"></path>
+                  <path d="M333.3,377.5" style="stroke-dasharray: 0, 0; stroke-dashoffset: 0;"></path>
+              </g>
+            <!-- Start & Select Buttons -->
+              <g>
+                  <path transform="matrix(0.9746 0.2241 -0.2241 0.9746 73.3574 -55.6453)" d="M274.7 295.4a7.2 8.7 0 1 0 14.4 0a7.2 8.7 0 1 0 -14.4 0z"></path>
+                  <path transform="matrix(0.9746 0.2241 -0.2241 0.9746 73.6574 -55.8801)" d="M275 296.6a8.1 9.7 0 1 0 16.2 0a8.1 9.7 0 1 0 -16.2 0z"></path>
+              </g>
+              <g>
+                <path transform="matrix(0.9746 0.2241 -0.2241 0.9746 73.2262 -67.1068)" d="M325.1 289.1a7.2 8.7 0 1 0 14.4 0a7.2 8.7 0 1 0 -14.4 0z"></path>
+                <path transform="matrix(0.9746 0.2241 -0.2241 0.9746 73.5175 -67.3351)" d="M325.4 290.3a8.1 9.7 0 1 0 16.2 0a8.1 9.7 0 1 0 -16.2 0z"></path>
+              </g>
+            <!-- Face Buttons -->
+              <g>
+              <!-- X -->
+                  <g>
+                      <path transform="matrix(0.9746 0.2241 -0.2241 0.9746 73.3214 -77.4732)" d="M366.2 284.3a11.8 14.2 0 1 0 23.6 0a11.8 14.2 0 1 0 -23.6 0z"></path>
+                      <path d="M382.9,271.4c7.1,1.6,11.9,9.3,9.9,17.8c-2,8.5-9.3,14.1-16.4,12.5" style="stroke-dasharray: 46, 46; stroke-dashoffset: 0;"></path>
+                  </g>
+              <!-- A -->
+                  <g>
+                      <path transform="matrix(0.9746 0.224 -0.224 0.9746 80.8478 -82.1669)" d="M390.7 315.2a11.8 14.2 0 1 0 23.6 0a11.8 14.2 0 1 0 -23.6 0z"></path>
+                      <path d="M407.4,302.3c7.1,1.6,11.9,9.3,9.9,17.8c-2,8.5-9.3,14.1-16.4,12.5" style="stroke-dasharray: 46, 46; stroke-dashoffset: 0;"></path>
+                  </g>
+              <!-- B -->
+                  <g>
+                      <path transform="matrix(0.9746 0.2241 -0.2241 0.9746 73.973 -90.4957)" d="M423.8 280.7a11.9 14.2 0 1 0 23.8 0a11.9 14.2 0 1 0 -23.8 0z"></path>
+                      <path d="M440.7,267.2c7.2,1.6,11.9,9.9,9.9,18.4c-2,8.5-9.4,14.1-16.5,12.5" style="stroke-dasharray: 47, 47; stroke-dashoffset: 0;"></path>
+                  </g>
+              <!-- Y -->
+                  <g>
+                      <path transform="matrix(0.9746 0.2241 -0.2241 0.9746 66.42 -84.7929)" d="M395 250.3a11.8 14.2 0 1 0 23.6 0a11.8 14.2 0 1 0 -23.6 0z"></path>
+                      <path d="M411.7,237.4c7.1,1.6,11.9,9.3,9.9,17.8c-2,8.5-9.3,14.1-16.4,12.5" style="stroke-dasharray: 46, 46; stroke-dashoffset: 0;"></path>
+                  </g>
+              </g>
+            <!-- D Pad -->
+              <g>
+                  <path d="M263.1,356.1c0,0-0.3,2.4,2.2,2.2c2.9-0.2,10.1-1.1,10.1-1.1s2.6-0.6,2.6,3.5c0,4.1,0,13.3,0,13.3
+                          s0.3,3.8-3.8,3.8s-11.1,0.7-11.1,0.7s-3.1,0.6-3.1,3.1c0,2.5,0,15.2,0,15.2s0,3.3-4,3.3c-4,0-8.6,0-8.6,0s-2.6,0.3-2.6-2.6
+                          c0-2.9,1.9-16,1.9-16s-0.2-3.3-3.8-3.3c-3.6,0-9.7,0-9.7,0s-2.3,0.6-2.3-3.6c0-4.1,0.6-12,0.6-12s0-2.7,3.9-2.7s9.4-0.4,9.4-0.4
+                          s4.1-0.4,4.1-4.1c0-3.6,0-15.1,0-15.1s0.9-2.1,4.2-2.1h7.7c0,0,2.5-0.4,2.5,2.5C263.4,343.7,263.1,356.1,263.1,356.1z" style="stroke-dasharray: 205, 205; stroke-dashoffset: 0;"></path>
+
+                    <path transform="matrix(0.9822 0.1876 -0.1876 0.9822 73.9741 -41.9485)" d="M230.20000000000002 369.9a28.4 36.3 0 1 0 56.8 0a28.4 36.3 0 1 0 -56.8 0z"></path>
+                  <path d="M245.5,399.4c0,0,3.6,3.8,5.2,4c2.9,0.3,8.9,0,8.9,0s4.9,0.4,4.9-5.9v-12.8c0-3,3-3,3-3s9.1,0,11.7,0
+                          c2.6,0,3.6-2.7,4-4.2c0.9-3.8,0.6-15.7,0.6-15.7c-1.3-1.4-7.7-4.6-7.7-4.6" style="stroke-dasharray: 85, 85; stroke-dashoffset: 0;"></path>
+                  <path d="M262.3,338.6l4.4,2.7c0,0,2.3,0.6,2.3,3.3c0,3.1,0,2.7,0,13.3" style="stroke-dasharray: 23, 23; stroke-dashoffset: 0;"></path>
+                  <path d="M231.7,377.5l2.6,4.2c0,0,1.1,1.5,2.6,1.5c1.4,0,9.8,0,9.8,0" style="stroke-dasharray: 18, 18; stroke-dashoffset: 0;"></path>
+              </g>
+            <!-- Xbox Logo -->
+              <g>
+                  <path d="M304.4,227.4" style="stroke-dasharray: 0, 0; stroke-dashoffset: 0;"></path>
+                  <path d="M311.5,230l4.9,2.4c0,0,4.4-3.7,8-3.7C324.4,228.6,315.7,226.2,311.5,230z" style="stroke-dasharray: 28, 28; stroke-dashoffset: 0;"></path>
+                  <path d="M326.2,230.1l-6.8,6.1c0,0,7.9,10.5,5.7,18.9C325.1,255.1,338,239.4,326.2,230.1z" style="stroke-dasharray: 58, 58; stroke-dashoffset: 0;"></path>
+                  <path d="M302.8,258.1c2.5,8.2,20.7,4,20.5-1.7c-0.3-7.7-7.5-15.6-7.5-15.6S301.9,255.1,302.8,258.1z" style="stroke-dasharray: 65, 65; stroke-dashoffset: 0;"></path>
+                  <path d="M311.5,237.7c-7.2,6.9-10,18.6-10,18.6s-3.5-13.9,6-22.6L311.5,237.7z" style="stroke-dasharray: 52, 52; stroke-dashoffset: 0;"></path>
+              </g>
+          </g>
+        </svg>
+    </div>
+    <div class="font" v-show="!pathShow">
+<!--       <svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="-20 -20 820 300.43" :class="fonts_name" ref="font">
+        <g class="letter letter--1">
+            <g class="letter__part">
+                <path class="letter__layer" d="M0.5 243.37L30.5 2.37 95.5 203.37 158.5 2.37 187.5 243.37"></path>
+                <path class="letter__layer" d="M0.5 243.37L30.5 2.37 95.5 203.37 158.5 2.37 187.5 243.37"></path>
+                <path class="letter__layer" d="M0.5 243.37L30.5 2.37 95.5 203.37 158.5 2.37 187.5 243.37"></path>
+            </g>
+        </g>
+        <g class="letter letter--1">
+            <g class="letter__part">
+                <path class="letter__layer" d="M268.5 2.37L321.5 123.37 321.5 243.37"></path>
+                <path class="letter__layer" d="M268.5 2.37L321.5 123.37 321.5 243.37"></path>
+                <path class="letter__layer" d="M268.5 2.37L321.5 123.37 321.5 243.37"></path>
+            </g>
+        </g>
+        <g class="letter letter--1">
+            <g class="letter__part">
+                <path class="letter__layer" d="M268.5 2.37L321.5 123.37 321.5 243.37"></path>
+                <path class="letter__layer" d="M268.5 2.37L321.5 123.37 321.5 243.37"></path>
+                <path class="letter__layer" d="M268.5 2.37L321.5 123.37 321.5 243.37"></path>
+            </g>
+        </g>
+        <g class="letter letter--1">
+            <g class="letter__part">
+                <path class="letter__layer" d="M382.5 2.37L321.5 123.37"></path>
+                <path class="letter__layer" d="M382.5 2.37L321.5 123.37"></path>
+                <path class="letter__layer" d="M382.5 2.37L321.5 123.37"></path>
+            </g>
+        </g>
+        <g class="letter letter--1">
+            <g class="letter__part">
+                <path class="letter__layer" d="M466.5 2.37L521.5 123.37 521.5 243.37"></path>
+                <path class="letter__layer" d="M466.5 2.37L521.5 123.37 521.5 243.37"></path>
+                <path class="letter__layer" d="M466.5 2.37L521.5 123.37 521.5 243.37"></path>
+            </g>
+        </g>
+        <g class="letter letter--1">
+            <g class="letter__part">
+                <path class="letter__layer" d="M590.5 2.37L521.5 123.37"></path>
+                <path class="letter__layer" d="M590.5 2.37L521.5 123.37"></path>
+                <path class="letter__layer" d="M590.5 2.37L521.5 123.37"></path>
+            </g>
+        </g>
+        <g class="letter letter--1">
+            <g class="letter__part">
+                <path class="letter__layer" d="M676.5 2.37L676.5 243.37"></path>
+                <path class="letter__layer" d="M676.5 2.37L676.5 243.37"></path>
+                <path class="letter__layer" d="M676.5 2.37L676.5 243.37"></path>
+            </g>
+        </g>
+        <g class="letter letter--1">
+            <g class="letter__part">
+                <path class="letter__layer" d="M778.5 123.37L676.5 123.37"></path>
+                <path class="letter__layer" d="M778.5 123.37L676.5 123.37"></path>
+                <path class="letter__layer" d="M778.5 123.37L676.5 123.37"></path>
+            </g>
+        </g>
+        <g class="letter letter--1">
+            <g class="letter__part">
+                <path class="letter__layer" d="M778.5 2.37L778.5 243.37"></path>
+                <path class="letter__layer" d="M778.5 2.37L778.5 243.37"></path>
+                <path class="letter__layer" d="M778.5 2.37L778.5 243.37"></path>
+            </g>
+        </g>
+      </svg>  --> 
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 320 180" :class="fonts_name" ref="font">
         <g class="letter letter--1" style="transform-origin: 51.6126px 89.912px 0px; opacity: 1; transform: rotateZ(0deg);">
           <g class="letter__part">
             <path class="letter__layer" d="M41.5,88.4c0,0,26.8,0.9,32.9-9.9c8.4-15-10.8-31.6-46.7-25.2" style="stroke-dashoffset: 0px; stroke-dasharray: 100.974; opacity: 1;"></path>
@@ -288,12 +539,11 @@ export default {
 	name: 'MyyhPath',
 	data () {
     return {
-            start:false,
-            seconds:0,
-            times:[0,0,0],
-            numTimes:[0,0,0],
-            secondAn:0,
-            showTimes:false
+            showTimes:false,
+            pathShow:true,
+            listPs4:false,
+            listXboxOne:false,
+            fonts_list:2
         }
 	},
 	computed: {
@@ -301,6 +551,9 @@ export default {
         aaa(){
           let items = this.lineData(this.dItems,this.pi(this.round,this.piN),this.cx,this.cy,this.r);
           return items
+        },
+        fonts_name(){
+          return 'letters--effect-'+this.fonts_list
         }
 	},
     watch:{
@@ -309,6 +562,7 @@ export default {
   mounted(){
     // this.lengthPath('list');
     this.lengthPath('font');
+    // this.linePath('line')
   },
 	methods: {
     lengthPath(id){
@@ -322,6 +576,20 @@ export default {
         path[i].style = 'stroke-dasharray: '+length+';stroke-dashoffset: '+length+';';
 
       }
+    },
+    linePath(id){
+        var id = id;
+        var path = this.$refs[id].getElementsByTagName('line');
+        for (var i = 0; i < path.length; i++)
+          {
+            var x1 = path[i].getAttribute("x1");
+            var y1 = path[i].getAttribute("y1");
+            var x2 = path[i].getAttribute("x2");
+            var y2 = path[i].getAttribute("y2");
+
+            this.line2path(x1,y1,x2,y2)
+          }
+        // console.log(path)
     },
     degree(n,d,num){
         var length = this.strokeDasharray(n);
@@ -369,7 +637,7 @@ export default {
       'a' + rx + ' ' + ry + ' 0 1 0 ' + 2*rx + ' 0' + 
       'a' + rx + ' ' + ry + ' 0 1 0 ' + (-2*rx) + ' 0' + 
       'z'; 
-      // console.log('<path d="'+path+'"></path>')
+      console.log('<path d="'+path+'"></path>')
       return path; 
     },
     line2path(x1, y1, x2, y2) { 
@@ -382,7 +650,17 @@ export default {
       var path = 'M' + x1 + ' '+ y1 + 'L' + x2 + ' ' + y2;
       console.log('<path d="'+path+'"></path>')
       return path; 
-    }
+    },
+    // polygon折线转换
+    polyline2path (points) {
+        var path = 'M' + points.slice(0,2).join(' ') +'L' + points.slice(2).join(' ');
+        return path;
+    },
+    // polygon多边形转换
+    // polygon2path (points) {
+    //     var path = 'M' + points.slice(0,2).join(' ') +'L' + points.slice(2).join(' ') + 'z';
+    //     return path;
+    // }
   }
 }
 </script>
@@ -409,7 +687,24 @@ export default {
 
 @keyframes fonts_an
 { 
-/*0%  { stroke-dashoffset: 130px; } */
+100% { 
+      stroke-dashoffset: 0;
+  }
+}
+@keyframes fonts_an_2
+{ 
+100% { 
+      stroke-dashoffset: 0;
+  }
+}
+@keyframes fonts_an_3
+{ 
+100% { 
+      stroke-dashoffset: 0;
+  }
+}
+@keyframes fonts_an_4
+{ 
 100% { 
       stroke-dashoffset: 0;
   }
@@ -423,49 +718,49 @@ export default {
 .letters--effect-4 .letter__part .letter__layer:nth-of-type(1) {
   stroke: #00966c;
   stroke-width: 10px;
-  animation: fonts_an 1s linear alternate forwards;
+  animation: fonts_an_4 1s linear alternate forwards;
 }
 .letters--effect-4 .letter__part .letter__layer:nth-of-type(2) {
   stroke: #27272d;
   stroke-width: 4px;
-  animation: fonts_an 0.75s 0.5s ease-out alternate forwards;
+  animation: fonts_an_4 0.75s 0.5s ease-out alternate forwards;
 }
 .letters--effect-4 .letter__part .letter__layer:nth-of-type(3) {
   stroke: #fcec9b;
   stroke-width: 1px;
-  animation: fonts_an 0.5s 1s ease-out alternate forwards;
+  animation: fonts_an_4 0.5s 1s ease-out alternate forwards;
 }
 .letters--effect-3 .letter__part .letter__layer:nth-of-type(1) {
   -webkit-transform: translate3d(-2px, -2px, 0);
   transform: translate3d(-2px, -2px, 0);
   stroke: #dddde6;
   stroke-width: 10px;
-  animation: fonts_an 1s linear alternate forwards;
+  animation: fonts_an_3 1s linear alternate forwards;
 }
 .letters--effect-3 .letter__part .letter__layer:nth-of-type(2) {
   stroke: #eca80e;
   stroke-width: 6px;
-  animation: fonts_an 0.75s 0.75s ease-out alternate forwards;
+  animation: fonts_an_3 0.75s 0.75s ease-out alternate forwards;
 }
 .letters--effect-3 .letter__part .letter__layer:nth-of-type(3) {
   stroke: #607d8b;
   stroke-width: 8px;
-  animation: fonts_an 0.75s 1s ease-out alternate forwards;
+  animation: fonts_an_3 0.75s 1s ease-out alternate forwards;
 }  
 .letters--effect-2 .letter__part .letter__layer:nth-of-type(1) {
   stroke: #4caf50;
   stroke-width: 1px;
-  animation: fonts_an 1s linear alternate forwards;
+  animation: fonts_an_2 1s linear alternate forwards;
 }
 .letters--effect-2 .letter__part .letter__layer:nth-of-type(2) {
   stroke: #ffeb3b;
   stroke-width: 4px;
-  animation: fonts_an 1s 0.25s ease-out alternate forwards;
+  animation: fonts_an_2 1s 0.25s ease-out alternate forwards;
 }
 .letters--effect-2 .letter__part .letter__layer:nth-of-type(3) {
   stroke: #e6437b;
   stroke-width: 10px;
-  animation: fonts_an 1s 0.5s ease-out alternate forwards;
+  animation: fonts_an_2 1s 0.5s ease-out alternate forwards;
 }
 .letters--effect-1 .letter__part .letter__layer:nth-of-type(1) {
   stroke: #f84242;
