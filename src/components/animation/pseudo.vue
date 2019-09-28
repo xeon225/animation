@@ -33,10 +33,16 @@
       <p v-for="($index,item) in 5" v-text="$index" :page="$index === 3 && 'current'"></p>
       <div pageName="下一页"></div>
     </div>
-    <div class="classa">
-      <p>1</p>
-      <em>2</em>
-      <div>3</div>
+    <div class="timeTree margint50">
+      <div class="times" v-for="item in 3">
+        <div class="clearfix">
+          <div><img src="../../assets/bingshanbear.svg" width="30" alt=""></div>
+          <div>
+            <h1>标题</h1>
+            <p class="text-dark">内容</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -54,6 +60,88 @@
   }
 </style>
 <style lang="scss" scoped>
+.timeTree{
+  position: relative;
+  &:before,&:after{
+    position:absolute;
+    content: '';
+    width:40px;
+    height:40px;
+    z-index: 1;
+    left: 50%;
+    margin-left: -20px;
+  }
+  &:before{
+    top: -30px;
+    background: url('../../assets/start.svg') no-repeat;
+    background-size: 100% auto;
+  }
+  &:after{
+    bottom:10px;
+    background: url('../../assets/end.svg') no-repeat;
+    background-size: 100% auto;
+  }
+  &:after{}
+  .times{
+    position:relative;
+    padding:50px;
+    &:after,&:before{
+      position:absolute;
+      content: '';
+      width:50%;
+      height:100%;
+      border:10px solid currentColor;
+      top:0;
+    }
+    &:before{
+      border-width:20px;
+    }
+    &:nth-of-type(odd){
+      .clearfix div:first-child{
+        float:left;
+      }
+      .clearfix div:last-child{
+        float:right;
+      }
+      &:after,&:before{
+        left:0;
+        border-top-left-radius:50px;
+        border-bottom-left-radius:50px;
+        border-right:0;
+      }
+    }
+    &:nth-of-type(even){
+      .clearfix div:first-child{
+        float:right;
+      }
+      .clearfix div:last-child{
+        float:left;
+      }
+      &:after,&:before{
+        right:0;
+        border-top-right-radius:50px;
+        border-bottom-right-radius:50px;
+        border-left:0;
+      }
+    }
+    &:not(:first-of-type){
+      margin-top:-20px;
+    }
+    &:nth-of-type(1){
+      color:rgba(255,0,0,.5);
+    }
+    &:nth-of-type(2){
+      color:rgba(0,0,255,.5);
+    }
+    &:nth-of-type(3){
+      color:rgba(0,128,0,.5);
+    }
+    &:nth-of-type(4){
+      color:orange;
+    }
+  }
+  
+}
 .classa{
   :nth-child(2){
     background: red
