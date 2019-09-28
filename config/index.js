@@ -53,6 +53,8 @@ module.exports = {
     antinomy: path.resolve(__dirname, '../dist/animation/antinomy.html'),   //悖论空间
     myyh: path.resolve(__dirname, '../dist/animation/myyh.html'),   //马姨呀嘿
     myyhPath: path.resolve(__dirname, '../dist/animation/myyhPath.html'),   //马姨呀嘿Path
+    pseudo: path.resolve(__dirname, '../dist/animation/pseudo.html'),   //伪类合集
+    
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',

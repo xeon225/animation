@@ -29,7 +29,8 @@ module.exports = {
     lineChart:'./src/js/animation/lineChart.js', //折线图
     antinomy:'./src/js/animation/antinomy.js', //悖论空间
     myyh:'./src/js/animation/myyh.js', //马姨呀嘿
-    myyhPath:'./src/js/animation/myyhPath.js' //马姨呀嘿Path
+    myyhPath:'./src/js/animation/myyhPath.js', //马姨呀嘿Path
+    pseudo:'./src/js/animation/pseudo.js' //伪类合集
   },
   output: {
     path: config.build.assetsRoot,
@@ -81,6 +82,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      { 
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       }
     ]
   },

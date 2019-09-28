@@ -107,6 +107,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks:['myyhPath']
     }),
+    // 伪类合集
+    new HtmlWebpackPlugin({
+      filename: 'animation/pseudo.html',
+      template: 'tpl/animation/pseudo.html',
+      inject: true,
+      chunks:['pseudo']
+    }),
     
     // copy custom static assets
     new CopyWebpackPlugin([
