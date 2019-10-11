@@ -34,12 +34,12 @@
       <div pageName="下一页"></div>
     </div>
     <div class="timeTree margint50">
-      <div class="times" v-for="item in 3">
+      <div class="times" v-for="item in face">
         <div class="clearfix">
-          <div><img src="../../assets/bingshanbear.svg" width="30" alt=""></div>
+          <div><img :src="item.img" width="80" alt=""></div>
           <div>
-            <h1>标题</h1>
-            <p class="text-dark">内容</p>
+            <h1>{{item.title}}</h1>
+            <p class="text-dark" v-html="item.content"></p>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
+<style>
 .notSelect p:not(:last-child){
   border-bottom:1px solid #000
 }
@@ -58,8 +58,10 @@
   html{
     padding:30px;
   }
+
 </style>
 <style lang="scss" scoped>
+
 .timeTree{
   position: relative;
   &:before,&:after{
@@ -85,6 +87,11 @@
   .times{
     position:relative;
     padding:50px;
+    .clearfix{
+      &>div{
+        width:50%;
+      }
+    }
     &:after,&:before{
       position:absolute;
       content: '';
@@ -102,6 +109,7 @@
       }
       .clearfix div:last-child{
         float:right;
+        text-align: right;
       }
       &:after,&:before{
         left:0;
@@ -113,6 +121,7 @@
     &:nth-of-type(even){
       .clearfix div:first-child{
         float:right;
+        text-align: right;
       }
       .clearfix div:last-child{
         float:left;
@@ -127,17 +136,17 @@
     &:not(:first-of-type){
       margin-top:-20px;
     }
-    &:nth-of-type(1){
+    &:nth-of-type(4n+1){
       color:rgba(255,0,0,.5);
     }
-    &:nth-of-type(2){
+    &:nth-of-type(4n+2){
       color:rgba(0,0,255,.5);
     }
-    &:nth-of-type(3){
+    &:nth-of-type(4n+3){
       color:rgba(0,128,0,.5);
     }
-    &:nth-of-type(4){
-      color:orange;
+    &:nth-of-type(4n){
+      color:rgba(255,165,0,.5);
     }
   }
   
@@ -296,7 +305,75 @@ export default {
 	data () {
     return {
     	selectNot:false,
-      selectNotAll:[]
+      selectNotAll:[],
+      face:[
+        {
+          img:require("../../assets/face/agou.png"),
+          title:"阿狗",
+          content:"welcome on to bingshan 汪 汪汪 <br>(继续走，不走咬你。)"
+        },
+        {
+          img:require("../../assets/face/leige.png"),
+          title:"磊哥",
+          content:"前端学习很简单。来，先入个门。学习如何画大饼。"
+        },
+        {
+          img:require("../../assets/face/hansheng.png"),
+          title:"瀚声",
+          content:"知识改变命运，我已经成功了。<br>（群众：王总好！）"
+        },
+        {
+          img:require("../../assets/face/guoyuan.png"),
+          title:"果园",
+          content:"天啊，我看到了什么。全是大神，大佬，天啊！各位走过路过，千万不能错过！（破音）"
+        },
+        {
+          img:require("../../assets/face/yangzhen.png"),
+          title:"小宇",
+          content:"不懂不要紧，多看多问，我认识的NB人多，尤其下一个。"
+        },
+        {
+          img:require("../../assets/face/mayi.png"),
+          title:"马姨",
+          content:"岁月才是最大的知识。<br>你们还是幼齿。"
+        },
+        {
+          img:require("../../assets/face/qifeng.png"),
+          title:"丰哥",
+          content:"我所传授的知识都有一个特点，简单易懂。因为我是领导。"
+        },
+        {
+          img:require("../../assets/face/bobo.png"),
+          title:"博哥",
+          content:"哼哼哼。。。不对，这块你做的有问题。"
+        },
+        {
+          img:require("../../assets/face/kaili.png"),
+          title:"凯丽",
+          content:"学习与吃，都很重要。不，还是吃重要。<br>（我去吃鹅了）"
+        },
+        {
+          img:require("../../assets/face/xianrou.png"),
+          title:"鲜肉",
+          content:"超越老师有时候不一定是在技术方面上。但喜悦心情都一样。<br>（她终于走了，哈哈哈）"
+        },
+        {
+          img:require("../../assets/face/xiaoqiang.png"),
+          title:"小强",
+          content:"技术要内外兼修的同时。会几套外门功夫也是必要的。<br>（7天精通dui产品与设计）"
+        },
+        {
+          img:require("../../assets/face/yangzhen.png"),
+          title:"振哥",
+          content:"嘿嘿，不好意思各位，给大家脸捏胖了。<br>（这样我就显瘦了）"
+        },
+        {
+          img:require("../../assets/face/shayi.png"),
+          title:"沙老师",
+          content:"恭喜，你已经是非常了不起的前端。<br>如果有遗漏的地方，可以返回起点再被咬一边。"
+        }
+
+      ]
     }
 	},
 	computed: {
