@@ -30,7 +30,8 @@ module.exports = {
     antinomy:'./src/js/animation/antinomy.js', //悖论空间
     myyh:'./src/js/animation/myyh.js', //马姨呀嘿
     myyhPath:'./src/js/animation/myyhPath.js', //马姨呀嘿Path
-    pseudo:'./src/js/animation/pseudo.js' //伪类合集
+    pseudo:'./src/js/animation/pseudo.js', //伪类合集
+    selector:'./src/js/animation/selector.js' //css选择器
   },
   output: {
     path: config.build.assetsRoot,

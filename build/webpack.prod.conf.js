@@ -205,6 +205,22 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency',
       chunks: ['manifest', 'vendor', 'pseudo']
     }),
+
+    // css选择器
+    new HtmlWebpackPlugin({
+      filename: process.env.NODE_ENV === 'testing'
+        ? '/animation/selector.html'
+        : config.build.selector,
+      template: './tpl/animation/selector.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
+      chunksSortMode: 'dependency',
+      chunks: ['manifest', 'vendor', 'selector']
+    }),
     
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),

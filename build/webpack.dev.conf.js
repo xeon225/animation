@@ -114,7 +114,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks:['pseudo']
     }),
-    
+    // css选择器
+    new HtmlWebpackPlugin({
+      filename: 'animation/selector.html',
+      template: 'tpl/animation/selector.html',
+      inject: true,
+      chunks:['selector']
+    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
