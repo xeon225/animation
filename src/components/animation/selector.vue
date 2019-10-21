@@ -49,53 +49,51 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style lang="scss" scoped>
+$list:('js','css','html');
+$num:length($list);
+@mixin selectBadge($n1, $n2, $n3) {
+  @if $n3 == '' {
+  &.#{$n1}.#{$n2}{
+    li{
+      display:none;
+    }
+    li[badge*='#{$n1}'][badge*='#{$n2}']{
+      display:block;
+    }
+  }
+  } @else {
+    &.#{$n1}.#{$n2}.#{$n3}{
+      li[badge]{
+        display:none;
+      }
+      li[badge*='#{$n1}'][badge*='#{$n2}'][badge*='#{$n3}']{
+        display:block;
+      }
+    }
+  }
+}
+
+
 .selectList{
   ul{
     &[class*=' ']{
       li{
-          display:none;
-        }
-    }
-    // &.js.css.html{
-    //   li[badge*="js"][badge*="css"][badge*="html"]{
-    //     display:block;
-    //   }
-    // }
-    &.js.html{
-      li[badge*="js"][badge*="html"]{
-        display:block;
+        display:none;
       }
-      &.css{
-        & > &[badge*="css"]{
+    }
+    @each $name in $list {
+      &.#{$name} {
+        li[badge*="#{$name}"]{
           display:block;
         }
       }
     }
-    // &.js.css{
-    //   li[badge*="js"][badge*="css"]{
-    //     display:block;
-    //   }
-    // }
-    // &.css.html{
-    //   li[badge*="css"][badge*="html"]{
-    //     display:block;
-    //   }
-    // }
-    // &.js{
-    //   li[badge*="js"]{
-    //     display:block;
-    //   }
-    // }
-    // &.css{
-    //   li[badge*="css"]{
-    //     display:block;
-    //   }
-    // }
-    // &.html{
-    //   li[badge*="html"]{
-    //     display:block;
-    //   }
-    // }
+    @include selectBadge('js','css','');
+    @include selectBadge('js','html','');
+    @include selectBadge('css','html','');
+
+    @include selectBadge('js','css','html');
+
   }
   &.searchReturn ul li{
     display:none;
@@ -141,7 +139,7 @@ export default {
           img:require("../../assets/face/leige.png"),
           title:"磊哥",
           content:"前端学习很简单。来，先入个门。学习如何画大饼。",
-          badge:['css']
+          badge:['css','html']
         },
         {
           img:require("../../assets/face/hansheng.png"),
