@@ -1,22 +1,24 @@
 <template>
   <div id="selector">
     <!-- 属性选择器 -->
-    <div>
-      <input type="search" v-model="searchText">
+    <h1 class="padding10 fs-20">css属性选择器</h1>
+    <div class="form paddingh10">
+      <input type="search" v-model="searchText"/>
       <div v-html="menuStyleText"></div>
-      <div class="padding20">
+      <div class="paddingv10">
         <pre>
           <code v-text="menuStyleText"></code>
         </pre>
       </div>
     </div>
-    <div class="selectBadge flex-container left">
-      <div class="marginr20" :class="selectClass.indexOf(item) != -1 && 'text-red'" @click="addClass(item)" v-for="item in badgeList">{{item}}</div>
-      <div @click="selectClass = ''">显示全部</div>
+    <h1 class="padding10 fs-20">css属性筛选</h1>
+    <div class="selectBadge flex-container left paddingh10">
+      <div class="marginr20 btn blue radius" :class="selectClass.indexOf(item) != -1 && 'reverse'" @click="addClass(item)" v-for="item in badgeList">{{item}}</div>
+      <div class="btn blue radius" @click="selectClass = ''">显示全部</div>
     </div>
-    <div class="selectList margint20" :class="searchText !='' && 'searchReturn'">
+    <div class="selectList margint20 paddingh5" :class="searchText !='' && 'searchReturn'">
       <ul :class="selectClass" class="box-container">
-        <li v-for="item in face" class="box-span4 padding5" :badge="item.badge">
+        <li :text="item.content" v-for="item in face" class="box-span3 padding5" :badge="item.badge">
           <div class="border radius">
             <div class="pos-r">
               <img :src="item.img" alt="">
@@ -24,25 +26,26 @@
                 <div class="badge badgeText red marginr5 small radius" v-for="itemb in item.badge" v-text="itemb"></div>
               </div>
             </div>
-            <div class="text-center" v-text="item.title"></div>
-            <div class="text-fixed4" v-html="item.content"></div>
+            <div class="text-fixed4 fs-12 paddingh5 text-dark" v-html="item.content"></div>
           </div>
         </li>
-<!--         <li badge="js" text="在村顶过顶过顶过">在村顶过顶过顶过</li>
-        <li badge="css" text="在在在">在在在</li>
-        <li badge="js" text="3">3</li>
-        <li badge="html" text="在在在">在在在</li>
-        <li badge="js" text="5">5</li>
-        <li badge="js" text="6">6</li> -->
       </ul>
     </div>
-
-    
-
     <!-- 兄弟选择器 -->
-    <div class="margint20">
-      <div v-for="item in 20">{{item}}</div>
+    <h1 class="padding10 fs-20">css兄弟选择器</h1>
+    <div class="padding10">
+      <div v-html="selectNum"></div>
+      <div class="paddingv10">
+        <pre>
+          <code v-text="selectNum"></code>
+        </pre>
+      </div>
+      <input type="range" name="range1" min="5" max="20" v-model="selectB"/>
+      <div class="selectBrother margint10 paddingh10">
+        <div v-for="item in 20">{{item}}</div>
+      </div>
     </div>
+    
   </div>
 </template>
 
@@ -115,6 +118,11 @@ pre{
     border-radius: 0;
   }
 }
+// .selectBrother{
+//   & div:nth-last-of-type(1) ~ div{
+//     display:none;
+//   }
+// }
 </style>
 
 <script>
@@ -155,7 +163,7 @@ export default {
           badge:['js','html']
         },
         {
-          img:require("../../assets/face/yangzhen.png"),
+          img:require("../../assets/face/xiaoyu.png"),
           title:"小宇",
           content:"不懂不要紧，多看多问，我认识的NB人多，尤其下一个。",
           badge:['js','css']
@@ -209,7 +217,9 @@ export default {
           badge:['js','css','html']
         }
 
-      ]
+      ],
+      selectB:5,
+      selectPage:5
     }
 	},
 	computed: {
@@ -218,6 +228,17 @@ export default {
 <style>
     .selectList.searchReturn ul li[text*='`+this.searchText+`']{
         display:block;
+    }
+</style>`
+    },
+    selectNum(){
+      return `
+<style>
+    .selectBrother div:nth-of-type(`+this.selectB+`) ~ div {
+        display: none;
+    }
+    .selectBrother div:nth-of-type(-n + `+ (this.selectB - this.selectPage) +`) {
+        display: none;
     }
 </style>`
     }
