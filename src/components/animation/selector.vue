@@ -263,11 +263,11 @@ $num:length($list);
         }
       }
     }
-    @include selectBadge('js','css','');
-    @include selectBadge('js','html','');
-    @include selectBadge('css','html','');
+    // @include selectBadge('js','css','');
+    // @include selectBadge('js','html','');
+    // @include selectBadge('css','html','');
 
-    @include selectBadge('js','css','html');
+    // @include selectBadge('js','css','html');
 
   }
   &.searchReturn ul li{
