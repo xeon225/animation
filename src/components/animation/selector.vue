@@ -45,7 +45,179 @@
         <div v-for="item in 20">{{item}}</div>
       </div>
     </div>
-    
+    <h1 class="padding10 fs-20">css权重</h1>
+    <div class="specificity padding5">
+      <div class="flex-container vfull">
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>通用选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/leige.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div class="fs-20 lh-1">*</div>
+            <div>0 - 0 - 0</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 元素</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>a</div>
+            <div>0 - 0 - 1</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>2 元素</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%" v-for="item in 2"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>li > a</div>
+            <div>0 - 0 - 2</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>9 元素</div></div>
+          <div class="text-center iconSelect"><img src="../../assets/face/yangzhen.png" alt="" width="50%" v-for="item in 9" class="pos-a"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>body div ul ... li a</div>
+            <div>0 - 0 - 9</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-container vfull">
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 类</div></div>
+          <div class="text-center"><img src="../../assets/face/qifeng.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>.qifeng</div>
+            <div>0 - 1 - 0</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 通用选择器</div><div>1 类</div></div>
+          <div class="text-center"><img src="../../assets/face/leige.png" alt="" width="50%"><img src="../../assets/face/qifeng.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>*.qifeng</div>
+            <div>0 - 1 - 0</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 通用选择器</div><div>1 属性选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/leige.png" alt="" width="50%"><img src="../../assets/face/qifeng.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>*.[type="boss"]</div>
+            <div>0 - 1 - 0</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 伪类选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/qifeng.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>:nth-of-type(n)</div>
+            <div>0 - 1 - 0</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-container vfull">
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 元素</div><div>1 类</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%"><img src="../../assets/face/qifeng.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>li.qifeng</div>
+            <div>0 - 1 - 1</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 元素</div><div>1 属性选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%"><img src="../../assets/face/qifeng.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>li[attr="boss"]</div>
+            <div>0 - 1 - 1</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>2 元素</div><div>1 伪类选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%" style="margin-left:-10%"><img src="../../assets/face/yangzhen.png" alt="" width="50%" style="margin-left:-30%"><img src="../../assets/face/qifeng.png" alt="" width="50%" style="margin-right:-10%;margin-left:-10%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>li:nth-of-type(3n) ~ li</div>
+            <div>0 - 1 - 2</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>2 元素</div><div>1 属性选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%" style="margin-left:-10%"><img src="../../assets/face/yangzhen.png" alt="" width="50%" style="margin-left:-30%"><img src="../../assets/face/qifeng.png" alt="" width="50%" style="margin-right:-10%;margin-left:-10%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>ul li[attr="boss"]</div>
+            <div>0 - 1 - 2</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-container vfull">
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 元素</div><div>1 类</div><div>1 伪类选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%" style="margin-left:-10%;margin-right:-10%"><img src="../../assets/face/qifeng.png" alt="" width="50%" style="margin-right:-20%;margin-left:0%"><img src="../../assets/face/qifeng.png" alt="" width="50%" style="margin-right:-10%;margin-left:-10%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>li.qifeng:nth-of-type(3n)</div>
+            <div>0 - 2 - 1</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 元素</div><div>1 类</div><div>1 属性选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%" style="margin-left:-10%;margin-right:-10%"><img src="../../assets/face/qifeng.png" alt="" width="50%" style="margin-right:-20%;margin-left:0%"><img src="../../assets/face/qifeng.png" alt="" width="50%" style="margin-right:-10%;margin-left:-10%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>input[type="boss"]:not(.qifeng)</div>
+            <div>0 - 2 - 1</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>9 元素/属性选择器/伪类选择器</div></div>
+          <div class="text-center iconSelect"><img src="../../assets/face/qifeng.png" alt="" width="50%" v-for="item in 9" class="pos-a"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>.qifeng/:nth-child(odd)/:qifeng[type]</div>
+            <div>0 - 9 - 0</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 ID选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/shayi.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>#shayi</div>
+            <div>1 - 0 - 0</div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-container vfull">
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 元素</div><div>1 类</div><div>1 ID选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%" style="margin-left:-20%;margin-right:-10%"><img src="../../assets/face/qifeng.png" alt="" width="50%" style="margin-right:-10%;margin-left:-10%"><img src="../../assets/face/shayi.png" alt="" width="50%" style="margin-right:-20%;margin-left:-10%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>#shayi li.qifeng</div>
+            <div>1 - 1 - 1</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>1 元素</div><div>2 ID选择器</div></div>
+          <div class="text-center"><img src="../../assets/face/yangzhen.png" alt="" width="50%" style="margin-left:-10%;margin-right:-10%"><img src="../../assets/face/shayi.png" alt="" width="50%" style="margin-right:-20%;margin-left:0%"><img src="../../assets/face/shayi.png" alt="" width="50%" style="margin-right:-10%;margin-left:-10%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>#shayi #shayi_item li</div>
+            <div>2 - 0 - 1</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>内联样式</div></div>
+          <div class="text-center iconSelect"><img src="../../assets/face/agou.png" alt="" width="50%"><img src="../../assets/face/mayi.png" alt="" width="50%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>style=""</div>
+            <div>1 - 0 - 0 - 0</div>
+          </div>
+        </div>
+        <div class="flex1 pos-r border margin5 flex-container center">
+          <div class="pos-a top0 left0 right0 fs-12 bg-red text-white paddingh5" style="z-index: 10"><div>!important</div></div>
+          <div class="text-center iconSelect"><img src="../../assets/face/hansheng.png" alt="" width="70%"></div>
+          <div class="flex-container pos-a bottom0 left0 right0 paddingh5 fs-12 bg-blue text-white lh-20">
+            <div>!important</div>
+            <div>1 - 0 - 0 - 0 - 0</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -123,6 +295,72 @@ pre{
 //     display:none;
 //   }
 // }
+.specificity{
+  &>div{
+    height:25vw;
+    &>div{
+      & .iconSelect img{
+        &:nth-child(3n + 1){
+          left:-5%;
+        }
+        &:nth-child(3n + 2){
+          left:25%;
+        }
+        &:nth-child(3n){
+          left:55%;
+        }
+        &:nth-child(-n+3){
+          top:0;
+        }
+        &:nth-child(-n+6):nth-child(n+4){
+          top:25%;
+        }
+        &:nth-child(-n+9):nth-child(n+7){
+          top:50%;
+        }
+      }
+    }
+    &:nth-child(odd){
+      &>div:nth-child(even){
+        background:linear-gradient(45deg,#ffffff 0%,#ffffff 11%,
+                                 #ffffdf 11%,#ffffdf 22%,
+                                 #ffffef 22%,#ffffef 33%,
+                                 #ffffbe 33%,#ffffbe 44%,
+                                 #fff2be 44%,#fff2be 55%,
+                                 #ffffbe 55%,#ffffbe 66%,
+                                 #ffffef 66%,#ffffef 77%,
+                                 #ffffdf 77%,#ffffdf 88%,
+                                 #ffffff 88%,#ffffff 100%);  
+      }
+    }
+    &:nth-child(even){
+      &>div:nth-child(odd){
+        background:linear-gradient(45deg,#ffffff 0%,#ffffff 11%,
+                                 #ffffdf 11%,#ffffdf 22%,
+                                 #ffffef 22%,#ffffef 33%,
+                                 #ffffbe 33%,#ffffbe 44%,
+                                 #fff2be 44%,#fff2be 55%,
+                                 #ffffbe 55%,#ffffbe 66%,
+                                 #ffffef 66%,#ffffef 77%,
+                                 #ffffdf 77%,#ffffdf 88%,
+                                 #ffffff 88%,#ffffff 100%);  
+      }
+    }
+    &:last-child{
+      &>div:last-child{
+        background:radial-gradient(#ff8080 0%,#ff8080 11%,
+                                 #ffbfbf 11%,#ffbfbf 22%,
+                                 #ff0000 22%,#ff0000 33%,
+                                 #ffbfbf 33%,#ffbfbf 44%,
+                                 #b30000 44%,#b30000 55%,
+                                 #ffbfbf 55%,#ffbfbf 66%,
+                                 #ff0000 66%,#ff0000 77%,
+                                 #ffbfbf 77%,#ffbfbf 88%,
+                                 #ff8080 88%,#ff8080 100%);
+      }
+    }
+  }
+}
 </style>
 
 <script>
