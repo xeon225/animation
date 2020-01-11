@@ -55,6 +55,7 @@ module.exports = {
     myyhPath: path.resolve(__dirname, '../dist/animation/myyhPath.html'),   //马姨呀嘿Path
     pseudo: path.resolve(__dirname, '../dist/animation/pseudo.html'),   //伪类合集
     selector: path.resolve(__dirname, '../dist/animation/selector.html'),   //css选择器
+    specification: path.resolve(__dirname, '../dist/animation/specification.html'),   //svg雪碧图
     
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),

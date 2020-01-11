@@ -11,6 +11,8 @@
       <div><a href="/animation/myyhPath.html">马姨呀嘿Path</a></div>
       <div><a href="/animation/pseudo.html">伪类合集</a></div>
       <div><a href="/animation/selector.html">css选择器</a></div>
+      <div><a href="/animation/specification.html">svg雪碧图</a></div>
+      
     </div>
   </div>
 </template>

@@ -121,6 +121,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks:['selector']
     }),
+    // svg雪碧图
+    new HtmlWebpackPlugin({
+      filename: 'animation/specification.html',
+      template: 'tpl/animation/specification.html',
+      inject: true,
+      chunks:['specification']
+    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
