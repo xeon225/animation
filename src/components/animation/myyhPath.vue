@@ -1,9 +1,6 @@
 <template>
   <div id="MyyhPath">
     <svg ref="fonts">
-      <path id="hMotion" d="M8,743c2.2-227.1-1.1-310.8-6-332c-0.8-3.6-4.7-18.5,0-36c4.3-15.9,13.6-26.2,18-31c20.7-22.8,60.5-38.2,105-39
-  c35-0.7,117.2,6.9,126,46c7.2,32.4-38.2,75.8-85,87c-45.8,10.9-110.2-5.1-126-51c-11.5-33.3,5.1-74.9,33-96c11-8.3,32.9-20.4,161-7
-  c79.3,8.3,103.9,16.3,131,0c7.8-4.7,33.1-22.1,47-77c36.6-144.9-2.3-565.7-7-615" fill="red"/>
     </svg>
     <div class="flex-container center text-center fs-16 paddingv20 borderb">
         <div class="flex1" :class="pathShow && 'text-red'" @click="pathShow = true">游戏机</div>

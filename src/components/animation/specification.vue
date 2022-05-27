@@ -37,7 +37,7 @@ import Vue from 'vue';
 import {iconMap} from '../../icons';
 
 export default {
-	name: 'specification',
+	name: 'test',
 	data () {
     return {
       iconMap:iconMap

@@ -74,7 +74,7 @@ import Vue from 'vue';
 
 
 export default {
-  	name: 'DrawingList',
+  	name: 'drawingList',
   	data () {
 	    return {
 	    	Width:200,				//画布长宽
@@ -148,7 +148,7 @@ export default {
         var style = '',
             p = '50% 50%',
             d = this.piN;
-            console.log(d)
+            // console.log(d)
             for(var i=0; i<d; i++){
               style += p + ((i+1)<d?',':'');
             }
@@ -200,7 +200,7 @@ export default {
           var n = 0;
           if (piN > 2 && piN < 91) {
             n = r/piN
-            console.log(r,piN,n)
+            // console.log(r,piN,n)
           } else {
             n = 60
           }
